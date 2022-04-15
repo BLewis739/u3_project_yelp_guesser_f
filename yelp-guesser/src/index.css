@@ -11,3 +11,26 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.register {
+border: 2px solid red;
+border-radius: 16px;
+height: 270px;
+width: 500px;
+padding-top: 30px;
+margin: auto;
+}
+
+form .register-form{
+  margin: 5px;
+}
+
+.input-wrapper{
+  margin: 20px;
+}
+
+input {
+  margin-left: 5px;
+}
+
+
