@@ -45,3 +45,36 @@ margin: auto;
 form .signin-form{
   margin: 5px;
 }
+
+.dev-wrapper{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+}
+
+.dev-card{
+  padding-top: 15px;
+  background-color: rgb(244, 131, 123);
+  height: 375px;
+  width: 300px;
+  justify-content: center;
+  text-align: center;
+  margin: 10px;
+  border: solid 2px red;
+  border-radius: 16px;
+}
+
+.dev-card a{
+  text-decoration: none;
+  color:oldlace;
+}
+
+.dev-card a:hover{
+  color:darkslategray;
+}
+
+img{
+  height: 200px;
+  width: 200px;
+  border-radius: 16px;
+}
