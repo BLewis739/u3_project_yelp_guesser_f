@@ -33,4 +33,15 @@ input {
   margin-left: 5px;
 }
 
+.signin{
+  border: 2px solid red;
+border-radius: 16px;
+height: 270px;
+width: 400px;
+padding-top: 30px;
+margin: auto;
+}
 
+form .signin-form{
+  margin: 5px;
+}

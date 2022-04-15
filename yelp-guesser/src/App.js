@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import Register from './pages/register'
+import SignIn from './pages/signin'
 import logo from './logo.svg'
 import './App.css'
 
@@ -10,6 +11,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Register />} />
+            <Route path="/signin" element={<SignIn />} />
           </Routes>
         </main>
       </header>
