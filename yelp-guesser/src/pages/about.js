@@ -2,6 +2,15 @@ const About = () => {
   return (
     <div className="about">
       <h2>About Yelp Guesser</h2>
+
+      <div className="about-blurb">
+        <p>
+          Yelp Guesser is a guessing game inspired by GeoGuessr. It was created
+          with the Yelp Fusion API, PostgreSQLs, Expres, React, and NodeJs. It
+          was created by Nick Lopez, Brad Lewis, and Mily Wendland during their
+          Software Engineering Intensive at General Assembly in April, 2022.
+        </p>
+      </div>
       <div className="dev-wrapper">
         <div className="dev-card">
           <img
@@ -30,7 +39,10 @@ const About = () => {
           ></img>
           <h3 className="dev-name">Mily Wendland</h3>
           <a href="https://github.com/milywendland">Check out Mily's Github</a>
-          <p>Blurb about Mily</p>
+          <p>
+            Mily is a former professional coffee snob, who loves gaming
+            (especially Minecraft), bright colors, and CSS.
+          </p>
         </div>
       </div>
     </div>

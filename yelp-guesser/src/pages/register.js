@@ -33,9 +33,10 @@ const Register = () => {
   }
 
   return (
-    <div>
-      <h2>Create an Account</h2>
+    <div className="register-wrapper">
+      <h2>Welcome to Yelp Guesser!</h2>
       <div className="register">
+        <h3>Create an Account</h3>
         <form className="register-form" onSubmit={handleSubmit}>
           <div className="input-wrapper">
             <label>
@@ -73,7 +74,7 @@ const Register = () => {
                   formValues.confirmPassword === formValues.password)
               }
             >
-              Sign Up
+              SIGN UP
             </button>
           </div>
         </form>

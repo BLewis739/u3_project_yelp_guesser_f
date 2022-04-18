@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #FDFFFC;
+  color: #011627;
 }
 
 code {
@@ -13,12 +15,39 @@ code {
 }
 
 .register {
-border: 2px solid red;
-border-radius: 16px;
-height: 270px;
-width: 500px;
-padding-top: 30px;
+height: 300px;
+width: 400px;
+padding-top: 5px;
 margin: auto;
+background-color: #edefec;
+border-radius: 16px;
+}
+
+.register h3{
+  padding-top:10px;
+  padding-bottom: 5px;
+}
+
+.register-wrapper h2{
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 32px;
+}
+
+
+.register button {
+  width: 75px;
+  height: 30px;
+  background-color: #FDFFFC;
+  border-radius: 8px;
+}
+
+.register button:enabled{
+  border-color: #2EC4B6;
+}
+
+.register button:enabled:hover{
+  background-color: #2EC4B6;
+  color:#FDFFFC;
 }
 
 form .register-form{
@@ -34,7 +63,7 @@ input {
 }
 
 .signin{
-  border: 2px solid red;
+  border: 2px solid #E71D36;
 border-radius: 16px;
 height: 270px;
 width: 400px;
@@ -46,7 +75,19 @@ form .signin-form{
   margin: 5px;
 }
 
+.about h2{
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 32px;
+}
+
+.about-blurb{
+  width:600px;
+  margin:auto;
+  margin-bottom: 15px;
+}
+
 .dev-wrapper{
+  margin-top: 10px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-items: center;
@@ -54,35 +95,62 @@ form .signin-form{
 
 .dev-card{
   padding-top: 15px;
-  background-color: rgb(244, 131, 123);
-  height: 375px;
-  width: 300px;
+  height: 400px;
+  width: 350px;
   justify-content: center;
   text-align: center;
   margin: 10px;
-  border: solid 2px red;
+  border: 3px solid #E71D36;
   border-radius: 16px;
+  color: #011627;
 }
 
 .dev-card a{
   text-decoration: none;
-  color:oldlace;
+  font-family: 'Source Sans Pro Bold 700', sans-serif;
+  font-size: 18px;
+  color:#2EC4B6;
 }
 
 .dev-card a:hover{
   color:darkslategray;
 }
 
+.dev-card p{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 img{
   height: 200px;
   width: 200px;
   border-radius: 16px;
+  margin-top: 5px;;
 }
 
 .gameboard{
   height: 500px;
-  width: 500px;
-  border: solid 2px red;
+  width: 600px;
+  border: solid 3px #E71D36;
   border-radius: 16px;
   margin:auto;
+}
+
+.game-button{
+  margin-top: 20px;
+  width: 75px;
+  height: 30px;
+  background-color: #FDFFFC;
+  border-radius: 8px;
+  border-color:#2EC4B6 ;
+}
+
+.game-button:hover{
+  background-color: #2EC4B6;
+  color:#FDFFFC;
+}
+
+.gameplay-wrapper h2{
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 32px;
 }
