@@ -31,6 +31,45 @@ nav a{
   font-size: 25px;
 }
 
+.wrapper{
+  display: flex;
+  margin-top: 30px;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+
+.no-no{
+margin-top: 30px;
+}
+
+.button button{
+  margin-top: 20px;
+  width: 75px;
+  height: 30px;
+  background-color: #FDFFFC;
+  border-radius: 8px;
+  border-color:#2EC4B6 ;
+}
+
+.button button:hover{
+  background-color: #2EC4B6;
+  color:#FDFFFC;
+}
+
+.button button:disabled:hover{
+  border-color:#E71D36 ;
+  background-color:#FDFFFC;
+  color:lightgray;
+}
+
+.logo p{
+  font-size: 70px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 700;
+  color: black;
+}
+
 .register {
 height: 300px;
 width: 400px;
@@ -80,16 +119,54 @@ input {
 }
 
 .signin{
-  border: 2px solid #E71D36;
+background-color: #edefec;
 border-radius: 16px;
-height: 270px;
-width: 400px;
+height: 200px;
+width: 350px;
 padding-top: 30px;
 margin: auto;
 }
 
+.signin button:disabled{
+  width: 75px;
+  height: 30px;
+  background-color: #FDFFFC;
+  border-radius: 8px;
+  border-color: #E71D36
+}
+
+.signin button:disabled:hover{
+  width: 75px;
+  height: 30px;
+  background-color: #FDFFFC;
+  border-radius: 8px;
+  border-color: #E71D36;
+  color: rgb(204, 203, 203);
+}
+
+.signin button:enabled{
+  width: 75px;
+  height: 30px;
+  background-color: #FDFFFC;
+  border-radius: 8px;
+  border-color: #2EC4B6
+}
+
+.signin button:enabled:hover{
+  background-color: #2EC4B6;
+  color:#FDFFFC;
+}
+
 form .signin-form{
   margin: 5px;
+}
+
+.signin-main h3{
+  margin-top: 25px;
+}
+
+.register-button button{
+  margin-top: 2px;
 }
 
 .about h2{
@@ -138,7 +215,7 @@ form .signin-form{
   padding-right: 10px;
 }
 
-img{
+.dev-card img{
   height: 200px;
   width: 200px;
   border-radius: 16px;

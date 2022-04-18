@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { SignInUser } from '../services/Auth'
 
-const SignIn = () => {
+const SignIn = ({ setUser, toggleAuthenticated }) => {
   let navigate = useNavigate()
 
   const [formValues, setFormValues] = useState({
@@ -16,19 +16,18 @@ const SignIn = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    SignInUser({
-      username: formValues.username,
-      password: formValues.password
-    })
+    const payload = SignInUser(formValues)
     setFormValues({
       username: '',
       password: ''
     })
+    setUser(payload)
+    toggleAuthenticated(true)
     navigate('/gameplay')
   }
 
   return (
-    <div>
+    <div className="signin-main">
       <h2>Sign In</h2>
       <div className="signin">
         <form className="signin-form" onSubmit={handleSubmit}>
@@ -46,10 +45,22 @@ const SignIn = () => {
           </div>
           <div className="button">
             <button disabled={!formValues.username && !formValues.password}>
-              Sign In
+              SIGN IN
             </button>
           </div>
         </form>
+      </div>
+      <div className="register-button">
+        <h3>Dont have an account?</h3>
+        <div className="button">
+          <button
+            onClick={() => {
+              navigate('/register')
+            }}
+          >
+            SIGN UP
+          </button>
+        </div>
       </div>
     </div>
   )
