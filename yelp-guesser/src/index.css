@@ -78,3 +78,11 @@ img{
   width: 200px;
   border-radius: 16px;
 }
+
+.gameboard{
+  height: 500px;
+  width: 500px;
+  border: solid 2px red;
+  border-radius: 16px;
+  margin:auto;
+}
