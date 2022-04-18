@@ -40,7 +40,7 @@ const About = () => {
           <h3 className="dev-name">Mily Wendland</h3>
           <a href="https://github.com/milywendland">Check out Mily's Github</a>
           <p>
-            Mily is a former professional coffee snob, who loves gaming
+            Mily is a former professional coffee snob who loves gaming
             (especially Minecraft), bright colors, and CSS.
           </p>
         </div>

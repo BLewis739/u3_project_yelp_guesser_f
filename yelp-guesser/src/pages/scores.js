@@ -5,14 +5,10 @@ const Scores = () => {
         <h2>Your High Scores</h2>
         <ol>
           <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
         </ol>
       </div>
 
-      {/* <div className="area-leaderboard">
+      <div className="zip-leader">
         <h2>(insert zipcode) Leaderboard</h2>
         <ol>
           <li></li>
@@ -21,9 +17,9 @@ const Scores = () => {
           <li></li>
           <li></li>
         </ol>
-      </div> */}
+      </div>
 
-      <div className="world-leaderboard">
+      <div className="leader-scores">
         <h2>World Leaderboard</h2>
         <ol>
           <li></li>

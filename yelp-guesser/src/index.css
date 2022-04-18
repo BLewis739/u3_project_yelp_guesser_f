@@ -14,6 +14,23 @@ code {
     monospace;
 }
 
+nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: #E71D36;
+  background-size: 100vw;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+nav a{
+  text-decoration: none;
+  color: #FDFFFC;
+  font-family: 'Orelega One', cursive;
+  font-weight: 400;
+  font-size: 25px;
+}
+
 .register {
 height: 300px;
 width: 400px;
@@ -136,6 +153,11 @@ img{
   margin:auto;
 }
 
+.question{
+  margin:auto;
+  margin-top: 10px;
+}
+
 .game-button{
   margin-top: 20px;
   width: 75px;
@@ -153,4 +175,60 @@ img{
 .gameplay-wrapper h2{
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 32px;
+}
+
+.your-scores{
+  width: 300px;
+  margin:auto;
+  background-color: #2EC4B6;
+  color:#FDFFFC;
+}
+
+.your-scores h2{
+  padding-top: 5px;
+}
+
+.your-scores li{
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: 'Orelega One', cursive;
+  font-size: 20px;
+}
+
+.zip-leader{
+  width: 300px;
+  margin:auto;
+  background-color:#E71D36;
+  color:#FDFFFC;
+}
+.zip-leader h2{
+  padding-top: 5px;
+}
+
+.zip-leader li{
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: 'Orelega One', cursive;
+  font-size: 20px;
+}
+
+.leader-scores{
+  width: 300px;
+  margin:auto;
+  background-color: #FF9F1C;
+  color:#FDFFFC;
+}
+
+.leader-scores h2{
+  padding-top: 5px;
+}
+
+.leader-scores li{
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: 'Orelega One', cursive;
+  font-size: 20px;
 }
