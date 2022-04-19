@@ -399,3 +399,87 @@ form .signin-form{
   font-family: 'Orelega One', cursive;
   font-size: 20px;
 }
+#hms-title, #hmds-title{
+  display:flex;
+  flex-direction: column;
+  font-weight: bold;
+  font-size: 40px;
+}
+#star-container{
+  display:flex;
+  top: 20px;
+  position:relative;
+  left:540px;
+}
+#dollar-container{
+  display:flex;
+  top: 20px;
+  position:relative;
+  left:585px;
+}
+#star-img{
+  position: relative;
+  width: 165px;
+  left: 540px;
+  top: 15px;
+}
+#dollar-img{
+  position: relative;
+  width: 165px;
+  left: 585px;
+  top: 15px;
+}
+.stars{
+  height: 28px;
+  width: 15px;
+  margin:.6px;
+  padding: .1px;
+  display: flex;
+  flex-direction: row;
+  
+  transform: translatey(-35px);
+
+}
+.dollars{
+  height: 28px;
+  width: 15px;
+  
+  margin:2.6px;
+  padding: .1px;
+  display: flex;
+  flex-direction: row;
+  
+  transform: translatey(-35px);
+
+}
+
+#business-image{
+  max-height: 400px;
+  width: auto;
+}
+.flareAnimationStop{
+  opacity: 0;
+  animation: none;
+}
+
+.flareAnimationGo{
+  animation: flare 1s 1;
+  font-weight: bolder;
+  z-index: -100;
+  font-size:44px;
+  
+}
+@keyframes flare {
+  99%  {
+    transform: translatey(-20px);
+  }
+  100%{
+    opacity: 0;
+  }
+}
+#dollar-img{
+  width: 80px;
+}
+#review{
+  font-size: 24px;
+}
