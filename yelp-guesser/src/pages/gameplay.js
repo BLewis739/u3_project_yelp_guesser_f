@@ -5,7 +5,7 @@ const Gameplay = ({ user, authenticated }) => {
 
   return user && authenticated ? (
     <div className="gameplay-wrapper">
-      <h2>Let's Play!</h2>
+      <h2>Hey {user.username}, let's play Yelp Guesser!</h2>
       <div className="gameboard"></div>
       <div className="question">
         How many Stars do you think (restuarant name) has?
