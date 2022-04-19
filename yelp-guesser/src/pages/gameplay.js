@@ -17,7 +17,7 @@ const Gameplay = ({ user, authenticated }) => {
     <div className="no-no">
       <h3>Uh oh! You need to sign in to do that.</h3>
       <div className="button">
-        <button onClick={() => navigate('/signin')}>SIGN IN</button>
+        <button onClick={() => navigate('/login')}>SIGN IN</button>
       </div>
     </div>
   )

@@ -331,12 +331,20 @@ form .signin-form{
   font-size: 32px;
 }
 
+.scores-wrapper{
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+}
+
 .your-scores{
   width: 300px;
   margin:auto;
   background-color: #2EC4B6;
   color:#FDFFFC;
   border-radius: 16px;
+  margin-top: 20px;
 }
 
 .your-scores h2{
@@ -357,6 +365,7 @@ form .signin-form{
   background-color:#E71D36;
   border-radius: 16px;
   color:#FDFFFC;
+  margin-top: 20px;
 }
 .zip-leader h2{
   padding-top: 5px;
@@ -376,6 +385,7 @@ form .signin-form{
   background-color: #FF9F1C;
   border-radius: 16px;
   color:#FDFFFC;
+  margin-top:20px;
 }
 
 .leader-scores h2{

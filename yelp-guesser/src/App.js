@@ -1,12 +1,13 @@
 import { Routes, Route } from 'react-router-dom'
 import Register from './pages/register'
-import SignIn from './pages/signin'
+import Login from './pages/login'
 import About from './pages/about'
 import Gameplay from './pages/gameplay'
 import Scores from './pages/scores'
 import Header from './components/Header'
 import Quickplay from './pages/quickplay'
 import Home from './pages/home'
+import Userpage from './pages/userpage'
 import { CheckSession } from './services/Auth'
 import './App.css'
 import { useEffect, useState } from 'react'
@@ -35,9 +36,9 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route
-            path="/signin"
+            path="/login"
             element={
-              <SignIn
+              <Login
                 setUser={setUser}
                 toggleAuthenticated={toggleAuthenticated}
               />
@@ -51,6 +52,10 @@ const App = () => {
           <Route path="/scores" element={<Scores />} />
           <Route path="/quickplay" element={<Quickplay />} />
           <Route path="/register" element={<Register />} />
+          <Route
+            path="/userpage"
+            element={<Userpage user={user} authenticated={authenticated} />}
+          />
         </Routes>
       </main>
     </div>

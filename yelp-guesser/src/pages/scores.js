@@ -5,6 +5,10 @@ const Scores = () => {
         <h2>Your High Scores</h2>
         <ol>
           <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
         </ol>
       </div>
 

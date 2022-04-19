@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { SignInUser } from '../services/Auth'
+import { LoginUser } from '../services/Auth'
 
-const SignIn = ({ setUser, toggleAuthenticated }) => {
+const Login = ({ setUser, toggleAuthenticated }) => {
   let navigate = useNavigate()
 
   const [formValues, setFormValues] = useState({
@@ -14,9 +14,9 @@ const SignIn = ({ setUser, toggleAuthenticated }) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    const payload = SignInUser(formValues)
+    const payload = await LoginUser(formValues)
     setFormValues({
       username: '',
       password: ''
@@ -34,17 +34,31 @@ const SignIn = ({ setUser, toggleAuthenticated }) => {
           <div className="input-wrapper">
             <label>
               Username:
-              <input onChange={handleChange} type="text" name="username" />
+              <input
+                onChange={handleChange}
+                type="text"
+                name="username"
+                placeholder="username"
+                value={formValues.username}
+                required
+              />
             </label>
           </div>
           <div className="input-wrapper">
             <label>
               Password:
-              <input onCHange={handleChange} type="text" name="password" />
+              <input
+                onCHange={handleChange}
+                type="text"
+                name="password"
+                placeholder="password"
+                value={formValues.password}
+                required
+              />
             </label>
           </div>
           <div className="button">
-            <button disabled={!formValues.username && !formValues.password}>
+            <button disabled={!formValues.username || !formValues.password}>
               SIGN IN
             </button>
           </div>
@@ -66,4 +80,4 @@ const SignIn = ({ setUser, toggleAuthenticated }) => {
   )
 }
 
-export default SignIn
+export default Login
