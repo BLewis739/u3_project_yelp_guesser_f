@@ -6,7 +6,7 @@ const Userpage = ({ user, authenticated }) => {
   return user && authenticated ? (
     <div>
       <div className="your-scores">
-        <h2>Your High Scores</h2>
+        <h2>{user.username}'s High Scores</h2>
         <ol>
           <li></li>
           <li></li>
