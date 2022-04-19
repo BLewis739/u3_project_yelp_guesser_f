@@ -1,8 +1,8 @@
-const Scores = () => {
-  return (
+const Scores = ({ user, authenticated }) => {
+  return user && authenticated ? (
     <div className="scores-wrapper">
       <div className="your-scores">
-        <h2>Your High Scores</h2>
+        <h2>{user.username}'s High Scores</h2>
         <ol>
           <li></li>
           <li></li>
@@ -13,7 +13,7 @@ const Scores = () => {
       </div>
 
       <div className="zip-leader">
-        <h2>(insert zipcode) Leaderboard</h2>
+        <h2>Area Leaderboard</h2>
         <ol>
           <li></li>
           <li></li>
@@ -23,6 +23,19 @@ const Scores = () => {
         </ol>
       </div>
 
+      <div className="leader-scores">
+        <h2>World Leaderboard</h2>
+        <ol>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ol>
+      </div>
+    </div>
+  ) : (
+    <div>
       <div className="leader-scores">
         <h2>World Leaderboard</h2>
         <ol>

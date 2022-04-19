@@ -49,7 +49,10 @@ const App = () => {
             path="/gameplay"
             element={<Gameplay user={user} authenticated={authenticated} />}
           />
-          <Route path="/scores" element={<Scores />} />
+          <Route
+            path="/scores"
+            element={<Scores user={user} authenticated={authenticated} />}
+          />
           <Route path="/quickplay" element={<Quickplay />} />
           <Route path="/register" element={<Register />} />
           <Route
