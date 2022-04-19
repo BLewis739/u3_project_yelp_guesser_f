@@ -31,6 +31,10 @@ nav a{
   font-size: 25px;
 }
 
+nav a:hover{
+  color:#FF9F1C;
+}
+
 .wrapper{
   display: flex;
   margin-top: 30px;
@@ -187,39 +191,112 @@ form .signin-form{
   justify-items: center;
 }
 
-.dev-card{
+.dev-card1{
   padding-top: 15px;
   height: 400px;
   width: 350px;
   justify-content: center;
   text-align: center;
   margin: 10px;
-  border: 3px solid #E71D36;
+  background-color: #E71D36;
   border-radius: 16px;
   color: #011627;
 }
 
-.dev-card a{
+.dev-card2{
+  padding-top: 15px;
+  height: 400px;
+  width: 350px;
+  justify-content: center;
+  text-align: center;
+  margin: 10px;
+  background-color: #2EC4B6;
+  border-radius: 16px;
+  color: #011627;
+}
+
+.dev-card3{
+  padding-top: 15px;
+  height: 400px;
+  width: 350px;
+  justify-content: center;
+  text-align: center;
+  margin: 10px;
+  background-color:#FF9F1C;
+  border-radius: 16px;
+  color: #011627;
+}
+
+.dev-card1 a{
   text-decoration: none;
   font-family: 'Source Sans Pro Bold 700', sans-serif;
   font-size: 18px;
+  color:#FDFFFC;
+}
+
+.dev-card2 a{
+  text-decoration: none;
+  font-family: 'Source Sans Pro Bold 700', sans-serif;
+  font-size: 18px;
+  color:#FDFFFC;
+}
+
+.dev-card3 a{
+  text-decoration: none;
+  font-family: 'Source Sans Pro Bold 700', sans-serif;
+  font-size: 18px;
+  color:#FDFFFC;
+}
+.dev-card1 a:hover{
   color:#2EC4B6;
 }
 
-.dev-card a:hover{
-  color:darkslategray;
+.dev-card2 a:hover{
+  
+  color:#FF9F1C;
 }
 
-.dev-card p{
+.dev-card3 a:hover{
+  color:#E71D36;
+}
+
+.dev-card1 p{
   padding-left: 10px;
   padding-right: 10px;
 }
 
-.dev-card img{
+.dev-card2 p{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.dev-card3 p{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.dev-card1 img{
   height: 200px;
   width: 200px;
   border-radius: 16px;
-  margin-top: 5px;;
+  border: 2px solid #FDFFFC;
+  margin-top: 5px;
+}
+
+.dev-card2 img{
+  height: 200px;
+  width: 200px;
+  border-radius: 16px;
+  border: 2px solid #FDFFFC;
+  margin-top: 5px;
+}
+
+.dev-card3 img{
+  height: 200px;
+  width: 200px;
+  border-radius: 16px;
+  border: 2px solid #FDFFFC;
+  margin-top: 5px;
 }
 
 .gameboard{
@@ -259,6 +336,7 @@ form .signin-form{
   margin:auto;
   background-color: #2EC4B6;
   color:#FDFFFC;
+  border-radius: 16px;
 }
 
 .your-scores h2{
@@ -277,6 +355,7 @@ form .signin-form{
   width: 300px;
   margin:auto;
   background-color:#E71D36;
+  border-radius: 16px;
   color:#FDFFFC;
 }
 .zip-leader h2{
@@ -295,6 +374,7 @@ form .signin-form{
   width: 300px;
   margin:auto;
   background-color: #FF9F1C;
+  border-radius: 16px;
   color:#FDFFFC;
 }
 

@@ -12,7 +12,7 @@ const About = () => {
         </p>
       </div>
       <div className="dev-wrapper">
-        <div className="dev-card">
+        <div className="dev-card1">
           <img
             src="https://avatars.githubusercontent.com/u/98563678?v=4"
             alt="Nick Lopez"
@@ -22,7 +22,7 @@ const About = () => {
           <p>Blurb about Nick</p>
         </div>
 
-        <div className="dev-card">
+        <div className="dev-card2">
           <img
             src="https://avatars.githubusercontent.com/u/91275413?v=4"
             alt="Brad and his cat Pancake"
@@ -32,7 +32,7 @@ const About = () => {
           <p>Blurb about Brad</p>
         </div>
 
-        <div className="dev-card">
+        <div className="dev-card3">
           <img
             src="https://64.media.tumblr.com/8d7983694a96750d4d02d972a3e2a34e/1ed6c09361f8ddf1-12/s540x810/9d3cc5cb10b317d35167ad99ca912ba24f9efd87.jpg"
             alt="Mily"
