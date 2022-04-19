@@ -48,7 +48,7 @@ const Login = ({ setUser, toggleAuthenticated }) => {
             <label>
               Password:
               <input
-                onCHange={handleChange}
+                onChange={handleChange}
                 type="text"
                 name="password"
                 placeholder="password"
@@ -58,7 +58,7 @@ const Login = ({ setUser, toggleAuthenticated }) => {
             </label>
           </div>
           <div className="button">
-            <button disabled={!formValues.username || !formValues.password}>
+            <button disabled={!formValues.username && !formValues.password}>
               SIGN IN
             </button>
           </div>
