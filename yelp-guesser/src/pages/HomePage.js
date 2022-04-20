@@ -63,7 +63,7 @@ const HomePage = () => {
     reviewScore: ''
   })
 
-  let zipCode = 'miami'
+  let zipCode = '60634'
 
   ////           ////
   //// Functions ////

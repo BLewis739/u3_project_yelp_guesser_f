@@ -31,7 +31,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header />
+      <Header user={user} authenticated={authenticated} />
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
