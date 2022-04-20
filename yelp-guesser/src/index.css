@@ -513,7 +513,7 @@ form .signin-form{
 #hot-guess-box{
   display: flex;
   flex-direction: column;
-  height: 80vh;
+  height: 40vh;
   justify-content: center;
   align-items: center;
 }
