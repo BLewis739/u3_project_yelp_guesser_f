@@ -16,13 +16,67 @@ code {
 
 nav {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   background-color: #E71D36;
   background-size: 100vw;
   padding-top: 20px;
   padding-bottom: 20px;
+  height: 5vw;
 }
-
+#navleft-box{
+  display: flex;
+  margin-left: 40px;
+}
+#navright-box{
+  display: flex;
+  margin-right: 40px;
+}
+#nav-logo{
+  height: 250%;
+}
+#nav-logo:hover{
+  height: 250%;
+  transform: translateY(10px)
+}
+#nav-gamelogo{
+  height: 100%;
+  margin: 10px 15px 0 15px;
+  -webkit-filter: invert(100%); 
+  filter: invert(100%);
+}
+#nav-gamelogo:hover{
+  height: 100%;
+  -webkit-filter: invert(0%); 
+  filter: invert(0%);
+transform: translateY(8px);
+}
+#nav-aboutlogo{
+  height: 100%;
+  -webkit-filter: invert(100%); 
+  filter: invert(100%);
+  margin: 10px 0px 0px 10px
+}
+#nav-aboutlogo:hover{
+  height: 100%;
+  -webkit-filter: invert(0%); 
+  filter: invert(0%);
+transform: translateY(5px);
+}
+#nav-scorelogo{
+  height: 100%;
+  margin: 10px 15px 0 15px;
+  -webkit-filter: invert(100%); 
+  filter: invert(100%);
+}
+#nav-scorelogo:hover{
+  height: 100%;
+  -webkit-filter: invert(0%); 
+  filter: invert(0%);
+transform: translateY(5px);
+}
+#nav-username{
+  margin: 30px;
+}
 nav a{
   text-decoration: none;
   color: #FDFFFC;
