@@ -512,6 +512,7 @@ form .signin-form{
 #business-image{
   max-height: 400px;
   width: auto;
+  border: 2px solid #2EC4B6;
 }
 .flareAnimationStop{
   opacity: 0;

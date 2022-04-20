@@ -112,64 +112,64 @@ const HomePage = () => {
       'flare: ' + flare
     )
     if (
-      playerChoice - businesses[randomBusiness].rating === 0 ||
-      businesses[randomBusiness].rating - playerChoice === 0
+      playerChoice - business.rating === 0 ||
+      business.rating - playerChoice === 0
     ) {
       setScore(prevScore + 100)
       setFlare('Perfect!')
     }
     if (
-      playerChoice - businesses[randomBusiness].rating === 0.5 ||
-      businesses[randomBusiness].rating - playerChoice === 0.5
+      playerChoice - business.rating === 0.5 ||
+      business.rating - playerChoice === 0.5
     ) {
       setScore(prevScore + 50)
       setFlare('Great!')
     }
     if (
-      playerChoice - businesses[randomBusiness].rating === 1 ||
-      businesses[randomBusiness].rating - playerChoice === 1
+      playerChoice - business.rating === 1 ||
+      business.rating - playerChoice === 1
     ) {
       setScore(prevScore + 30)
       setFlare('Good!')
     }
     if (
-      playerChoice - businesses[randomBusiness].rating === 1.5 ||
-      businesses[randomBusiness].rating - playerChoice === 1.5
+      playerChoice - business.rating === 1.5 ||
+      business.rating - playerChoice === 1.5
     ) {
       setScore(prevScore + 20)
       setFlare('Eh...')
     }
     if (
-      playerChoice - businesses[randomBusiness].rating === 2 ||
-      businesses[randomBusiness].rating - playerChoice === 2
+      playerChoice - business.rating === 2 ||
+      business.rating - playerChoice === 2
     ) {
       setScore(prevScore + 20)
       setFlare('Eh...')
     }
     if (
-      playerChoice - businesses[randomBusiness].rating === 2.5 ||
-      businesses[randomBusiness].rating - playerChoice === 2.5
+      playerChoice - business.rating === 2.5 ||
+      business.rating - playerChoice === 2.5
     ) {
       setScore(prevScore + 15)
       setFlare('Bad...')
     }
     if (
-      playerChoice - businesses[randomBusiness].rating === 3 ||
-      businesses[randomBusiness].rating - playerChoice === 3
+      playerChoice - business.rating === 3 ||
+      business.rating - playerChoice === 3
     ) {
       setScore(prevScore + 10)
       setFlare('Bad...')
     }
     if (
-      playerChoice - businesses[randomBusiness].rating === 3.5 ||
-      businesses[randomBusiness].rating - playerChoice === 3.5
+      playerChoice - business.rating === 3.5 ||
+      business.rating - playerChoice === 3.5
     ) {
       setScore(prevScore + 5)
       setFlare('Terrible...')
     }
     if (
-      playerChoice - businesses[randomBusiness].rating === 4 ||
-      businesses[randomBusiness].rating - playerChoice === 4
+      playerChoice - business.rating === 4 ||
+      business.rating - playerChoice === 4
     ) {
       setScore(prevScore + 1)
       setFlare('Garbage...')
@@ -482,14 +482,13 @@ const HomePage = () => {
       return (
         <div>
           <div className="star-button-box">
-            <HowManyDollarSigns
+            <HowManyStars
               choice={choice}
               setChoice={setChoice}
+              starCount={starCount}
+              setStarCount={setStarCount}
               business={business}
-              dollarCount={dollarCount}
-              setDollarCount={setDollarCount}
               playerChoiceConverter={playerChoiceConverter}
-              setRoundBusiness={setRoundBusiness}
             />
             <h3 id="flare" className={flareAnimation}>
               {flare}

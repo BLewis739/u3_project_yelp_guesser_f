@@ -27,7 +27,7 @@ const Header = (props) => {
         </div>
         <div id="navright-box">
           <div className="nav" id="nav-username">
-            <Link to="/userpage">
+            <Link to={props.user  ? "/userpage" : '/login'}>
               {props.user ? 'Welcome ' + props.user.username : 'sign in'}
             </Link>
           </div>
