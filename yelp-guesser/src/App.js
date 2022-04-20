@@ -15,6 +15,7 @@ import { useEffect, useState } from 'react'
 const App = () => {
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
+  const [leaderboardScores, setLeaderboardScores] = useState(undefined)
 
   const checkToken = async () => {
     const user = await CheckSession()
@@ -55,7 +56,14 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route
             path="/gameplay"
-            element={<Gameplay user={user} authenticated={authenticated} />}
+            element={
+              <Gameplay
+                user={user}
+                authenticated={authenticated}
+                leaderboardScores={leaderboardScores}
+                setLeaderboardScores={setLeaderboardScores}
+              />
+            }
           />
           <Route
             path="/scores"
@@ -65,7 +73,14 @@ const App = () => {
           <Route path="/register" element={<Register />} />
           <Route
             path="/userpage"
-            element={<Userpage user={user} authenticated={authenticated} />}
+            element={
+              <Userpage
+                user={user}
+                authenticated={authenticated}
+                leaderboardScores={leaderboardScores}
+                setLeaderboardScores={setLeaderboardScores}
+              />
+            }
           />
         </Routes>
       </main>
