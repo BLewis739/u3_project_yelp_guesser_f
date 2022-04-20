@@ -367,7 +367,6 @@ const HomePage = () => {
     case 0:
       return (
         <div>
-          <h1>Yelp Guesser</h1>
           <button
             onClick={() => {
               setRound(1)

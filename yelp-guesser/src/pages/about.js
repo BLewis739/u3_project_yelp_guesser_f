@@ -1,7 +1,8 @@
+import aboutLanding from '../images/about-landing.png'
 const About = () => {
   return (
     <div className="about">
-      <h2>About Yelp Guesser</h2>
+      <img id="about-img" src={aboutLanding} />
 
       <div className="about-blurb">
         <p>
