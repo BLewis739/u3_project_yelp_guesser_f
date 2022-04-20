@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 import yelpGuesserLogo from '../images/yelpguesserlogo.png'
 import playGameLogo from '../images/gamecontroller.png'
 import leaderBoard from '../images/leaderboard.png'
@@ -8,9 +9,10 @@ import pear from '../images/pear.png'
 import orange from '../images/orange.png'
 
 const Header = (props) => {
+  const [palette, setPalette] = useState('navBarRed')
   return (
     <header>
-      <nav>
+      <nav className={palette}>
         <div id="navleft-box">
           <div className="nav">
             <Link to="/">
@@ -31,9 +33,9 @@ const Header = (props) => {
         <div id="navright-box">
           <div className='nav' id="fruit">
             <div className="accordian horizontal">
-            <img src={strawberry} alt='strawberry' onClick=""></img>
-            <img src={pear} alt='pear' onClick=""></img>
-            <img src={orange} alt='orange' onClick=''></img>
+            <img id="strawberry"src={strawberry} alt='strawberry' onClick={()=> setPalette('navBarRed')}></img>
+            <img id="pear" src={pear} alt='pear' onClick={()=> setPalette('navBarGreen')}></img>
+            <img id="orange" src={orange} alt='orange' onClick={()=> setPalette('navBarOrange')}></img>
             </div>
           </div>
           <div className="nav" id="nav-username">

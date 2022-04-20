@@ -21,11 +21,20 @@ code {
 nav {
   display: flex;
   justify-content: space-between;
-  background-color: #E71D36;
+ 
   background-size: 100vw;
   padding-top: 20px;
   padding-bottom: 20px;
   height: 5vw;
+}
+.navBarRed{
+  background-color: #E71D36;
+}
+.navBarGreen{
+  background-color:#2EC4B6
+}
+.navBarOrange{
+  background-color: #FF9F1C;
 }
 #navleft-box{
   display: flex;
@@ -37,23 +46,55 @@ nav {
 }
 
 #fruit img{
-  margin-top:2px;
-  height: 40px;
-  width: 40px;
+  width: 60%;
+  -webkit-filter: invert(100%); 
+  filter: invert(100%);
+  
+  
+  
+}
+#strawberry:hover{
+  cursor:pointer;
+  -webkit-filter: invert(14%) sepia(77%) saturate(5869%) hue-rotate(347deg) brightness(97%) contrast(87%);
+  filter: invert(14%) sepia(77%) saturate(5869%) hue-rotate(347deg) brightness(97%) contrast(87%);
+}
+#pear:hover{
+  cursor:pointer;
+  -webkit-filter: invert(61%) sepia(80%) saturate(372%) hue-rotate(125deg) brightness(91%) contrast(91%);
+  filter: invert(61%) sepia(80%) saturate(372%) hue-rotate(125deg) brightness(91%) contrast(91%);
+}
+#orange:hover{
+  cursor:pointer;
+  -webkit-filter: invert(68%) sepia(96%) saturate(1801%) hue-rotate(344deg) brightness(101%) contrast(101%);
+  filter: invert(68%) sepia(96%) saturate(1801%) hue-rotate(344deg) brightness(101%) contrast(101%);
 }
 
 .accordian{
-  margin-top:15px;
-  width: 50px;
-  height: 45px;
+  
+  width: 100px;
+  height: 120%;
   overflow: hidden;
   z-index: 1;
+  border-radius: 20px;
+
 }
 
 .accordian:hover{
-  display:block;
+  animation: expand;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+ 
+  /* display:block;
   background-color:#E71D36;
-  height:150px;
+  height:350%; */
+}
+@keyframes expand {
+  100%  {
+    display:block;
+    background-color:black;
+    height:350%;
+  }
+
 }
 
 
