@@ -1,18 +1,40 @@
 import { useNavigate } from 'react-router-dom'
+import {
+  GetUserLeaderboard,
+  GetFullUserLeaderboard
+} from '../services/Leaderboard'
+import { useEffect } from 'react'
 
-const Userpage = ({ user, authenticated }) => {
+const Userpage = ({
+  user,
+  authenticated,
+  leaderboardScores,
+  setLeaderboardScores
+}) => {
   let navigate = useNavigate()
+
+  // const retrieveLeaderboard = async (userId) => {
+  //   const userBoard = await GetFullUserLeaderboard(userId)
+  //   setLeaderboardScores(userBoard)
+  // }
+
+  // const userIdString = user.id.toString()
+
+  // useEffect(() => {
+  //   retrieveLeaderboard(userIdString)
+  // }, [])
 
   return user && authenticated ? (
     <div>
       <div className="your-scores">
         <h2>{user.username}'s High Scores</h2>
         <ol>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
+          {leaderboardScores.map((item) => (
+            <li>
+              <div className="points">{item.points}</div>
+              <div className="date">{item.date}</div>
+            </li>
+          ))}
         </ol>
       </div>
     </div>
