@@ -1,15 +1,11 @@
 import { useNavigate } from 'react-router-dom'
-import {
-  GetUserLeaderboard,
-  GetFullUserLeaderboard
-} from '../services/Leaderboard'
 import { useEffect } from 'react'
 
 const Userpage = ({
   user,
   authenticated,
-  leaderboardScores,
-  setLeaderboardScores
+  userLeaderboardScores,
+  setUserLeaderboardScores
 }) => {
   let navigate = useNavigate()
 
@@ -29,7 +25,7 @@ const Userpage = ({
       <div className="your-scores">
         <h2>{user.username}'s High Scores</h2>
         <ol>
-          {leaderboardScores.map((item) => (
+          {userLeaderboardScores.map((item) => (
             <li>
               <div className="points">{item.points}</div>
               <div className="date">{item.date}</div>

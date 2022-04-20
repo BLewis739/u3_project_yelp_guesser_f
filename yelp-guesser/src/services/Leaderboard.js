@@ -17,3 +17,11 @@ export const GetFullUserLeaderboard = async (user_id) => {
     throw error
   }
 }
+export const GetFullWorldLeaderboard = async () => {
+  try {
+    const res = await Client.get(`/leaderboard/world`)
+    return res.data
+  } catch (error) {
+    throw error
+  }
+}
