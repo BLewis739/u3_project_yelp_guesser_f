@@ -29,6 +29,14 @@ const App = () => {
     }
   }, [])
 
+  useEffect(() => {
+    const loggedInUser = localStorage.getItem('user')
+    if (loggedInUser) {
+      const foundUser = JSON.parse(loggedInUser)
+      setUser(foundUser)
+    }
+  }, [])
+
   return (
     <div className="App">
       <Header user={user} authenticated={authenticated} />

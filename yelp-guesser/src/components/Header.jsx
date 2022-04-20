@@ -3,6 +3,9 @@ import yelpGuesserLogo from '../images/yelpguesserlogo.png'
 import playGameLogo from '../images/gamecontroller.png'
 import leaderBoard from '../images/leaderboard.png'
 import questionMark from '../images/questionmark.png'
+import strawberry from '../images/strawberry.png'
+import pear from '../images/pear.png'
+import orange from '../images/orange.png'
 
 const Header = (props) => {
   return (
@@ -26,6 +29,13 @@ const Header = (props) => {
           </div>
         </div>
         <div id="navright-box">
+          <div className='nav' id="fruit">
+            <div className="accordian horizontal">
+            <img src={strawberry} alt='strawberry' onClick=""></img>
+            <img src={pear} alt='pear' onClick=""></img>
+            <img src={orange} alt='orange' onClick=''></img>
+            </div>
+          </div>
           <div className="nav" id="nav-username">
             <Link to={props.user  ? "/userpage" : '/login'}>
               {props.user ? 'Welcome ' + props.user.username : 'sign in'}
