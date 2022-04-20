@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Viga&display=swap');
+*{
+  font-family: 'Viga', sans-serif;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -453,6 +457,32 @@ form .signin-form{
   font-family: 'Orelega One', cursive;
   font-size: 20px;
 }
+
+#hot-guess-box{
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  justify-content: center;
+  align-items: center;
+}
+#hot-guess-img{
+  height: auto;
+  width: 23%;
+}
+#about-img{
+  height: 300px;
+}
+#main-logo-landing{
+  border-bottom: 1px solid black;
+}
+#quickplay-image{
+  height: 200px;
+  
+}
+/* ///////////////////////////////////////////////////////////////////////////// */
+/* /////////////////////////////// GAMEPLAY CSS //////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////// */
+
 #hms-title, #hmds-title{
   display:flex;
   flex-direction: column;
@@ -510,7 +540,7 @@ form .signin-form{
 #business-image{
   max-height: 400px;
   width: auto;
-  border: 2px solid #2EC4B6;
+
 }
 .flareAnimationStop{
   opacity: 0;
