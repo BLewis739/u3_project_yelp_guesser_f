@@ -15,7 +15,9 @@ import { useEffect, useState } from 'react'
 const App = () => {
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
-  const [leaderboardScores, setLeaderboardScores] = useState(undefined)
+  const [userLeaderboardScores, setUserLeaderboardScores] = useState(undefined)
+  const [worldLeaderboardScores, setWorldLeaderboardScores] =
+    useState(undefined)
 
   const checkToken = async () => {
     const user = await CheckSession()
@@ -40,7 +42,14 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header user={user} authenticated={authenticated} />
+      <Header
+        user={user}
+        authenticated={authenticated}
+        setWorldLeaderboardScores={setWorldLeaderboardScores}
+        worldLeaderboardScores={worldLeaderboardScores}
+        userLeaderboardScores={userLeaderboardScores}
+        setUserLeaderboardScores={setUserLeaderboardScores}
+      />
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -48,6 +57,7 @@ const App = () => {
             path="/login"
             element={
               <Login
+                user={user}
                 setUser={setUser}
                 toggleAuthenticated={toggleAuthenticated}
               />
@@ -60,14 +70,23 @@ const App = () => {
               <Gameplay
                 user={user}
                 authenticated={authenticated}
-                leaderboardScores={leaderboardScores}
-                setLeaderboardScores={setLeaderboardScores}
+                userLeaderboardScores={userLeaderboardScores}
+                setUserLeaderboardScores={setUserLeaderboardScores}
+                worldLeaderboardScores={worldLeaderboardScores}
+                setWorldLeaderboardScores={setWorldLeaderboardScores}
               />
             }
           />
           <Route
             path="/scores"
-            element={<Scores user={user} authenticated={authenticated} />}
+            element={
+              <Scores
+                user={user}
+                authenticated={authenticated}
+                worldLeaderboardScores={worldLeaderboardScores}
+                userLeaderboardScores={userLeaderboardScores}
+              />
+            }
           />
           <Route path="/quickplay" element={<Quickplay />} />
           <Route path="/register" element={<Register />} />
@@ -77,8 +96,8 @@ const App = () => {
               <Userpage
                 user={user}
                 authenticated={authenticated}
-                leaderboardScores={leaderboardScores}
-                setLeaderboardScores={setLeaderboardScores}
+                userLeaderboardScores={userLeaderboardScores}
+                setUserLeaderboardScores={setUserLeaderboardScores}
               />
             }
           />
