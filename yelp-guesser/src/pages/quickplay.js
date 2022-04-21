@@ -8,6 +8,10 @@ const Quickplay = () => {
   const [spinClassOne, setSpinClassOne] = useState(false)
   const [spinClassTwo, setSpinClassTwo] = useState(false)
   const [spinClassThree, setSpinClassThree] = useState(false)
+
+  const [subtextClassOne, setSubtextClassOne] = useState(false)
+  const [subtextClassTwo, setSubtextClassTwo] = useState(false)
+  const [subtextClassThree, setSubtextClassThree] = useState(false)
   return (
     <div id="game-page">
       <div className="game-select">
@@ -19,11 +23,21 @@ const Quickplay = () => {
           />
           <h1
             className="game-page-text"
-            onMouseOver={() => setSpinClassOne(true)}
-            onMouseLeave={() => setSpinClassOne(false)}
+            onMouseOver={() => (
+              setSubtextClassOne(true), setSpinClassOne(true)
+            )}
+            onMouseLeave={() => (
+              setSubtextClassOne(false), setSpinClassOne(false)
+            )}
           >
             Local Play
           </h1>
+          <p
+            id="local-subtext"
+            className={subtextClassOne ? 'appear' : undefined}
+          >
+            Play with businesses in your backyard!
+          </p>
         </div>
         <div className="gamebox" id="gamebox-two">
           <img
@@ -31,13 +45,24 @@ const Quickplay = () => {
             className={spinClassTwo ? 'spin' : undefined}
             src={quickPlay}
           />
+
           <h1
             className="game-page-text"
-            onMouseOver={() => setSpinClassTwo(true)}
-            onMouseLeave={() => setSpinClassTwo(false)}
+            onMouseOver={() => (
+              setSubtextClassTwo(true), setSpinClassTwo(true)
+            )}
+            onMouseLeave={() => (
+              setSubtextClassTwo(false), setSpinClassTwo(false)
+            )}
           >
             Quick Play
           </h1>
+          <p
+            id="quickplay-subtext"
+            className={subtextClassTwo ? 'appear' : undefined}
+          >
+            Enter a zipcode and play!
+          </p>
         </div>
         <div className="gamebox" id="gamebox-three">
           <img
@@ -47,11 +72,21 @@ const Quickplay = () => {
           />
           <h1
             className="game-page-text"
-            onMouseOver={() => setSpinClassThree(true)}
-            onMouseLeave={() => setSpinClassThree(false)}
+            onMouseOver={() => (
+              setSubtextClassThree(true), setSpinClassThree(true)
+            )}
+            onMouseLeave={() => (
+              setSubtextClassThree(false), setSpinClassThree(false)
+            )}
           >
             Global Play
           </h1>
+          <p
+            id="global-subtext"
+            className={subtextClassThree ? 'appear' : undefined}
+          >
+            Play with businesses from around the world!
+          </p>
         </div>
       </div>
     </div>

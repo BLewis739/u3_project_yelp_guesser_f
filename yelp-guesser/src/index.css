@@ -665,12 +665,14 @@ font-size: 39px;
   width: 30%;
   border: 4px solid black;
   margin: 30px;
-  color:white;
-  text-shadow: 3px 3px black;
+  
+  
   
 }
 .game-page-text{
   font-size: 55px;
+  text-shadow: 3px 3px black;
+  color:white;
 }
 #gamebox-one{
   background-color: #E71D36;
@@ -691,10 +693,17 @@ font-size: 39px;
 
 .spin{
   animation: rotate 1.5s linear infinite;
+ }
  
+#local-subtext, #quickplay-subtext, #global-subtext{
+   font-size: 20px;
+   opacity: 0;
+   color: black;
   
-  
-}
+ }
+ .appear{
+  animation: appear .5s linear forwards;
+ }
 .game-page-text:hover{
   animation: raise .5s linear forwards;
   cursor: pointer;
@@ -713,6 +722,12 @@ font-size: 39px;
   100%  {
     transform: translateY(1px);
     font-size: 63px;
+  }
+
+}
+@keyframes appear {
+  100%  {
+  opacity: 1;
   }
 
 }
