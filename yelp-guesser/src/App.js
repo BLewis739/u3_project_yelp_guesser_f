@@ -19,6 +19,12 @@ const App = () => {
   const [worldLeaderboardScores, setWorldLeaderboardScores] =
     useState(undefined)
 
+  const handleLogOut = () => {
+    setUser(null)
+    toggleAuthenticated(false)
+    localStorage.clear()
+  }
+
   const checkToken = async () => {
     const user = await CheckSession()
     setUser(user)
