@@ -7,10 +7,6 @@ import questionMark from '../images/questionmark.png'
 import strawberry from '../images/strawberry.png'
 import pear from '../images/pear.png'
 import orange from '../images/orange.png'
-import {
-  GetFullWorldLeaderboard
-} from '../services/Leaderboard'
-import { useEffect } from 'react'
 
 
 const Header = (props) => {

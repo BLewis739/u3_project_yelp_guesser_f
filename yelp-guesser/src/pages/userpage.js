@@ -1,5 +1,4 @@
 import { useNavigate } from 'react-router-dom'
-import { useEffect } from 'react'
 
 const Userpage = ({
   user,
@@ -9,29 +8,11 @@ const Userpage = ({
 }) => {
   let navigate = useNavigate()
 
-  // const retrieveLeaderboard = async (userId) => {
-  //   const userBoard = await GetFullUserLeaderboard(userId)
-  //   setLeaderboardScores(userBoard)
-  // }
-
-  // const userIdString = user.id.toString()
-
-  // useEffect(() => {
-  //   retrieveLeaderboard(userIdString)
-  // }, [])
-
   return user && authenticated ? (
     <div>
       <div className="your-scores">
-        <h2>{user.username}'s High Scores</h2>
-        <ol>
-          {userLeaderboardScores.map((item) => (
-            <li>
-              <div className="points">{item.points}</div>
-              <div className="date">{item.date}</div>
-            </li>
-          ))}
-        </ol>
+        <h2>{user.username}'s Profile</h2>
+        <div className="username">Username: {user.username}</div>
       </div>
     </div>
   ) : (

@@ -93,6 +93,8 @@ const App = () => {
                 authenticated={authenticated}
                 worldLeaderboardScores={worldLeaderboardScores}
                 userLeaderboardScores={userLeaderboardScores}
+                setWorldLeaderboardScores={setWorldLeaderboardScores}
+                setUserLeaderboardScores={setUserLeaderboardScores}
               />
             }
           />
