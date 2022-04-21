@@ -19,6 +19,7 @@ import twoDollars from '../images/new2dollar.PNG'
 import threeDollars from '../images/new3dollar.PNG'
 import fourDollars from '../images/new4dollar.PNG'
 import quickPlay from '../images/quicklogo.png'
+import getReady from '../images/getready.PNG'
 import FinalScore from '../components/FinalScore'
 
 const HomePage = (props) => {
@@ -112,7 +113,7 @@ const HomePage = (props) => {
 
   const checkScore = (playerChoice) => {
     let prevScore = score
-    let prevRound = startState
+
     console.log('checking...')
     console.log(
       'player: ' + playerChoice,
@@ -125,6 +126,8 @@ const HomePage = (props) => {
       playerChoice - business.rating === 0 ||
       business.rating - playerChoice === 0
     ) {
+      console.log('here?')
+
       setScore(prevScore + 100)
       setFlare('Perfect!')
     }
@@ -343,21 +346,24 @@ const HomePage = (props) => {
     }
   }
   const setRound = async (start) => {
-    if (businesses !== []) {
-      setStart(start)
-      setRoundQuestion(parseInt(Math.random() * (4 - 1) + 1))
-      setChoice(undefined)
-      setStarCount(noStars)
-      setRandomBusiness(parseInt(Math.random() * (50 - 0) + 0))
+    setStart(start)
 
+    setChoice(undefined)
+    setStarCount(noStars)
+    setRandomBusiness(parseInt(Math.random() * (50 - 0) + 0))
+    if (start !== 'Get Ready!' && start !== 1) {
       if (reviewBoolean) {
         checkReviewScore(playerChoice)
         toggleReviewBoolean(false)
-      } else if (!reviewBoolean) checkScore(playerChoice)
-
-      await setRoundBusiness()
+      } else if (!reviewBoolean) {
+        console.log('here!')
+        checkScore(playerChoice)
+      }
     }
+
+    await setRoundBusiness()
   }
+
   const handleChange = (event) => {
     const { name, value } = event.target
     console.log(name)
@@ -415,7 +421,8 @@ const HomePage = (props) => {
               disabled={businesses.length > 1 ? false : true}
               id="next-button"
               onClick={() => {
-                setRound('Get Ready!')
+                setStart('Get Ready!')
+                toggleReviewBoolean(false)
                 setScore(0)
                 countDownTimer()
               }}
@@ -848,7 +855,7 @@ const HomePage = (props) => {
     case 'Get Ready!':
       return (
         <div>
-          <h1>Get Ready!</h1>
+          <img id="getready-img" src={getReady} />
           <h1>{countDown}</h1>
         </div>
       )
