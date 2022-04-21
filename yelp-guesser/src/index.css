@@ -828,13 +828,15 @@ font-size: 39px;
 }
 #flare{
   color:#E71D36;
-  display: flex;
-  justify-self: center;
+  
+ bottom: 120px;
+  z-index: 100;
 }
 .flareAnimationStop{
   opacity: 0;
   animation: none;
-  position: absolute;
+  position: relative;
+  
 }
 
 .flareAnimationGo{
@@ -842,7 +844,8 @@ font-size: 39px;
   font-weight: bolder;
   z-index: -100;
   font-size:44px;
-  position: absolute;
+  position: relative;
+
 }
 
 #dollar-img{
@@ -858,10 +861,20 @@ font-size: 39px;
   margin: 15px;
   padding: 10px;
 }
+.next-arrow{
+  height:50px;
+}
+.next-arrow:hover{
+  cursor: pointer;
+  transform: translateY(10px);
+  -webkit-filter: invert(61%) sepia(80%) saturate(372%) hue-rotate(125deg) brightness(91%) contrast(91%);
+  filter: invert(61%) sepia(80%) saturate(372%) hue-rotate(125deg) brightness(91%) contrast(91%);
+  
+}
 
 @keyframes flare {
   99%  {
-    transform: translatey(-20px);
+    transform: translatey(-100px);
   }
   100%{
     opacity: 0;

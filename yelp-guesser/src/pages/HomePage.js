@@ -20,6 +20,7 @@ import threeDollars from '../images/new3dollar.PNG'
 import fourDollars from '../images/new4dollar.PNG'
 import quickPlay from '../images/quicklogo.png'
 import getReady from '../images/getready.PNG'
+import nextArrow from '../images/arrow.png'
 import FinalScore from '../components/FinalScore'
 
 const HomePage = (props) => {
@@ -449,17 +450,17 @@ const HomePage = (props) => {
             />
 
             <h1>{score}</h1>
-            <button
+            <img
               id="next-button"
+              className="next-arrow"
+              src={nextArrow}
               onClick={() => {
                 setRound(2)
                 setFlareAnimation('flareAnimationGo')
                 setTimeout(() => setFlareAnimation('flareAnimationStop'), 1000)
                 toggleReviewBoolean(false)
               }}
-            >
-              next
-            </button>
+            />
           </div>
         </div>
       )
@@ -478,22 +479,23 @@ const HomePage = (props) => {
               business={business}
               playerChoiceConverter={playerChoiceConverter}
             />
-            <h3 id="flare" className={flareAnimation}>
-              {flare}
-            </h3>
+
             <h1>{score}</h1>
-            <button
+            <img
               id="next-button"
+              className="next-arrow"
+              src={nextArrow}
               onClick={() => {
                 setRound(3)
                 setFlareAnimation('flareAnimationGo')
                 setTimeout(() => setFlareAnimation('flareAnimationStop'), 1000)
                 toggleReviewBoolean(false)
               }}
-            >
-              next
-            </button>
+            />
           </div>
+          <h3 id="flare" className={flareAnimation}>
+            {flare}
+          </h3>
         </div>
       )
 
@@ -511,22 +513,23 @@ const HomePage = (props) => {
               business={business}
               playerChoiceConverter={playerChoiceConverter}
             />
-            <h3 id="flare" className={flareAnimation}>
-              {flare}
-            </h3>
+
             <h1>{score}</h1>
-            <button
+            <img
               id="next-button"
+              className="next-arrow"
+              src={nextArrow}
               onClick={() => {
                 setRound(4)
                 setFlareAnimation('flareAnimationGo')
                 setTimeout(() => setFlareAnimation('flareAnimationStop'), 1000)
                 toggleReviewBoolean(false)
               }}
-            >
-              next
-            </button>
+            />
           </div>
+          <h3 id="flare" className={flareAnimation}>
+            {flare}
+          </h3>
         </div>
       )
 
@@ -544,22 +547,23 @@ const HomePage = (props) => {
               business={business}
               playerChoiceConverter={playerChoiceConverter}
             />
-            <h3 id="flare" className={flareAnimation}>
-              {flare}
-            </h3>
+
             <h1>{score}</h1>
-            <button
+            <img
               id="next-button"
+              className="next-arrow"
+              src={nextArrow}
               onClick={() => {
                 setRound(5)
                 setFlareAnimation('flareAnimationGo')
                 setTimeout(() => setFlareAnimation('flareAnimationStop'), 1000)
                 toggleReviewBoolean(false)
               }}
-            >
-              next
-            </button>
+            />
           </div>
+          <h3 id="flare" className={flareAnimation}>
+            {flare}
+          </h3>
         </div>
       )
 
@@ -578,22 +582,23 @@ const HomePage = (props) => {
               playerChoiceConverter={playerChoiceConverter}
               setRoundBusiness={setRoundBusiness}
             />
-            <h3 id="flare" className={flareAnimation}>
-              {flare}
-            </h3>
+
             <h1>{score}</h1>
-            <button
+            <img
               id="next-button"
+              className="next-arrow"
+              src={nextArrow}
               onClick={() => {
                 setRound(6)
                 setFlareAnimation('flareAnimationGo')
                 setTimeout(() => setFlareAnimation('flareAnimationStop'), 1000)
                 toggleReviewBoolean(false)
               }}
-            >
-              next
-            </button>
+            />
           </div>
+          <h3 id="flare" className={flareAnimation}>
+            {flare}
+          </h3>
         </div>
       )
 
@@ -616,22 +621,23 @@ const HomePage = (props) => {
               reviewBoolean={reviewBoolean}
               toggleReviewBoolean={toggleReviewBoolean}
             />
-            <h3 id="flare" className={flareAnimation}>
-              {flare}
-            </h3>
+
             <h1>{score}</h1>
-            <button
+            <img
               id="next-button"
+              className="next-arrow"
+              src={nextArrow}
               onClick={() => {
                 setRound(7)
                 setFlareAnimation('flareAnimationGo')
                 setTimeout(() => setFlareAnimation('flareAnimationStop'), 1000)
                 toggleReviewBoolean(false)
               }}
-            >
-              next
-            </button>
+            />
           </div>
+          <h3 id="flare" className={flareAnimation}>
+            {flare}
+          </h3>
         </div>
       )
 
@@ -649,22 +655,23 @@ const HomePage = (props) => {
               business={business}
               playerChoiceConverter={playerChoiceConverter}
             />
-            <h3 id="flare" className={flareAnimation}>
-              {flare}
-            </h3>
+
             <h1>{score}</h1>
-            <button
+            <img
               id="next-button"
+              className="next-arrow"
+              src={nextArrow}
               onClick={() => {
                 setRound(8)
                 setFlareAnimation('flareAnimationGo')
                 setTimeout(() => setFlareAnimation('flareAnimationStop'), 1000)
                 toggleReviewBoolean(false)
               }}
-            >
-              next
-            </button>
+            />
           </div>
+          <h3 id="flare" className={flareAnimation}>
+            {flare}
+          </h3>
         </div>
       )
 
@@ -682,22 +689,23 @@ const HomePage = (props) => {
               business={business}
               playerChoiceConverter={playerChoiceConverter}
             />
-            <h3 id="flare" className={flareAnimation}>
-              {flare}
-            </h3>
+
             <h1>{score}</h1>
-            <button
+            <img
               id="next-button"
+              className="next-arrow"
+              src={nextArrow}
               onClick={() => {
                 setRound(9)
                 setFlareAnimation('flareAnimationGo')
                 setTimeout(() => setFlareAnimation('flareAnimationStop'), 1000)
                 toggleReviewBoolean(false)
               }}
-            >
-              next
-            </button>
+            />
           </div>
+          <h3 id="flare" className={flareAnimation}>
+            {flare}
+          </h3>
         </div>
       )
 
@@ -715,22 +723,23 @@ const HomePage = (props) => {
               business={business}
               playerChoiceConverter={playerChoiceConverter}
             />
-            <h3 id="flare" className={flareAnimation}>
-              {flare}
-            </h3>
+
             <h1>{score}</h1>
-            <button
+            <img
               id="next-button"
+              className="next-arrow"
+              src={nextArrow}
               onClick={() => {
                 setRound(10)
                 setFlareAnimation('flareAnimationGo')
                 setTimeout(() => setFlareAnimation('flareAnimationStop'), 1000)
                 toggleReviewBoolean(false)
               }}
-            >
-              next
-            </button>
+            />
           </div>
+          <h3 id="flare" className={flareAnimation}>
+            {flare}
+          </h3>
         </div>
       )
 
@@ -749,22 +758,23 @@ const HomePage = (props) => {
               playerChoiceConverter={playerChoiceConverter}
               setRoundBusiness={setRoundBusiness}
             />
-            <h3 id="flare" className={flareAnimation}>
-              {flare}
-            </h3>
+
             <h1>{score}</h1>
-            <button
+            <img
               id="next-button"
+              className="next-arrow"
+              src={nextArrow}
               onClick={() => {
                 setRound(11)
                 setFlareAnimation('flareAnimationGo')
                 setTimeout(() => setFlareAnimation('flareAnimationStop'), 1000)
                 toggleReviewBoolean(false)
               }}
-            >
-              next
-            </button>
+            />
           </div>
+          <h3 id="flare" className={flareAnimation}>
+            {flare}
+          </h3>
         </div>
       )
 
@@ -782,22 +792,23 @@ const HomePage = (props) => {
               business={business}
               playerChoiceConverter={playerChoiceConverter}
             />
-            <h3 id="flare" className={flareAnimation}>
-              {flare}
-            </h3>
+
             <h1>{score}</h1>
-            <button
+            <img
               id="next-button"
+              className="next-arrow"
+              src={nextArrow}
               onClick={() => {
                 setRound(12)
                 setFlareAnimation('flareAnimationGo')
                 setTimeout(() => setFlareAnimation('flareAnimationStop'), 1000)
                 toggleReviewBoolean(false)
               }}
-            >
-              next
-            </button>
+            />
           </div>
+          <h3 id="flare" className={flareAnimation}>
+            {flare}
+          </h3>
         </div>
       )
 
@@ -820,22 +831,23 @@ const HomePage = (props) => {
               reviewBoolean={reviewBoolean}
               toggleReviewBoolean={toggleReviewBoolean}
             />
-            <h3 id="flare" className={flareAnimation}>
-              {flare}
-            </h3>
+
             <h1>{score}</h1>
-            <button
+            <img
               id="next-button"
+              className="next-arrow"
+              src={nextArrow}
               onClick={() => {
                 setRound(13)
                 setFlareAnimation('flareAnimationGo')
                 setTimeout(() => setFlareAnimation('flareAnimationStop'), 1000)
                 toggleReviewBoolean(false)
               }}
-            >
-              next
-            </button>
+            />
           </div>
+          <h3 id="flare" className={flareAnimation}>
+            {flare}
+          </h3>
         </div>
       )
 
