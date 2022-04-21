@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { LoginUser } from '../services/Auth'
+import signIn from '../images/signIn.PNG'
 
 const Login = ({ user, setUser, toggleAuthenticated }) => {
   let navigate = useNavigate()
@@ -28,7 +29,7 @@ const Login = ({ user, setUser, toggleAuthenticated }) => {
 
   return (
     <div className="signin-main">
-      <h2>Sign In</h2>
+      <img src={signIn} alt="sign in" />
       <div className="signin">
         <form className="signin-form" onSubmit={handleSubmit}>
           <div className="input-wrapper">

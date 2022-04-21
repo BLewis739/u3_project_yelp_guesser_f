@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { RegisterUser } from '../services/Auth'
+import create from '../images/create.PNG'
 
 const Register = () => {
   let navigate = useNavigate()
@@ -34,9 +35,8 @@ const Register = () => {
 
   return (
     <div className="register-wrapper">
-      <h2>Welcome to Yelp Guesser!</h2>
+      <img src={create} alt="create account" />
       <div className="register">
-        <h3>Create an Account</h3>
         <form className="register-form" onSubmit={handleSubmit}>
           <div className="input-wrapper">
             <label>
