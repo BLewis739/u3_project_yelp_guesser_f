@@ -12,8 +12,8 @@ const Home = () => {
   const phraseGenerator = () => {
     let phrases = [
       'Lets gooooooooooooooooo!',
-      'no relation to Geoguessr',
-      'In color! For the first time!',
+      'No relation to Geoguessr',
+      'In full TECHNICOLOR!',
       'Made from meat products',
       'As foretold by Nostradamus',
       'Orange cat supremacy!!!!!',
@@ -21,7 +21,9 @@ const Home = () => {
       'Rate your local dog park!',
       'Creative mode is coming soon!',
       'Tavern Cut = Chicago Style',
-      'Cat Guesser is a lie!'
+      'Cat Guesser is a lie!',
+      'Apply directly to the forehead',
+      'Now with 50% more Taco Bells!'
     ]
     setSubtextState(phrases[parseInt(Math.random() * (phrases.length - 0) + 0)])
   }
