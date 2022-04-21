@@ -24,7 +24,7 @@ const Login = ({ user, setUser, toggleAuthenticated }) => {
     })
     setUser(payload)
     toggleAuthenticated(true)
-    navigate('/gameplay')
+    navigate('/quickplay')
   }
 
   return (
