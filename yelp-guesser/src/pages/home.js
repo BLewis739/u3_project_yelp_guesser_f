@@ -17,7 +17,7 @@ const Home = () => {
       'Made from meat products',
       'As foretold by Nostradamus',
       'Orange cat supremacy!!!',
-      'Now with 50% less 7/11s!',
+      'Now with 50% less 7-Elevens!',
       'Rate your local dog park!',
       'Creative mode is coming soon!',
       'Tavern Cut = Chicago Style',
