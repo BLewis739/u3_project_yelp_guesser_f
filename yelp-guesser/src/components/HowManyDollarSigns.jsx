@@ -1,8 +1,8 @@
-
-import oneDollar from '../images/onedollar.png'
-import twoDollars from '../images/twodollars.png'
-import threeDollars from '../images/threedollars.png'
-import fourDollars from '../images/fourdollars.png'
+import noDollars from '../images/new0dollar.PNG'
+import oneDollar from '../images/new1dollar.PNG'
+import twoDollars from '../images/new2dollar.PNG'
+import threeDollars from '../images/new3dollar.PNG'
+import fourDollars from '../images/new4dollar.PNG'
 
 const HowManyDollarSigns = (props) => {
   const clickDollar = (dollar) => {

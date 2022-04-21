@@ -34,6 +34,8 @@ const Scores = ({
     retrieveUserLeaderboard(userIdString)
   }, [])
 
+  const showWorldLeaderboard = () => {}
+
   return user && authenticated ? (
     <div className="scores-wrapper">
       <div className="your-scores">
