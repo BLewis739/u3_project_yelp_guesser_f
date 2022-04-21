@@ -99,7 +99,10 @@ const App = () => {
             }
           />
           <Route path="/quickplay" element={<Quickplay />} />
-          <Route path="/quickgame" element={<HomePage />} />
+          <Route
+            path="/quickgame"
+            element={<HomePage user={user} authenticated={authenticated} />}
+          />
           <Route path="/register" element={<Register />} />
           <Route
             path="/userpage"

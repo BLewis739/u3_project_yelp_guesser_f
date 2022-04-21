@@ -19,8 +19,9 @@ import twoDollars from '../images/new2dollar.PNG'
 import threeDollars from '../images/new3dollar.PNG'
 import fourDollars from '../images/new4dollar.PNG'
 import quickPlay from '../images/quicklogo.png'
+import FinalScore from '../components/FinalScore'
 
-const HomePage = () => {
+const HomePage = (props) => {
   ////                   ////
   //// State & Variables ////
   ////                   ////
@@ -830,17 +831,14 @@ const HomePage = () => {
     case 13:
       return (
         <div>
-          <h1>Final Score!</h1>
-          <h2>{score}</h2>
-          <button
-            id="next-button"
-            onClick={() => {
-              setRound(0)
-              setScore(0)
-            }}
-          >
-            next
-          </button>
+          <FinalScore
+            score={score}
+            setRound={setRound}
+            setScore={setScore}
+            setCountDown={setCountDown}
+            user={props.user}
+            authenticated={props.authenticated}
+          />
         </div>
       )
     case 'Get Ready!':
