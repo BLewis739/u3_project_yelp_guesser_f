@@ -1,9 +1,34 @@
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 import hotGuessLogo from '../images/hot-guesses.png'
 import yelpGuesserLogo from '../images/yelpguesserlogo.png'
+import cryCat from '../images/crycat.png'
 const Home = () => {
   let navigate = useNavigate()
+
+  const [subtextState, setSubtextState] = useState('Lets goooo!')
+
+  const phraseGenerator = () => {
+    let phrases = [
+      'Lets gooooooooooooooooo!',
+      'no relation to Geoguessr',
+      'In color! For the first time!',
+      'Made from meat products',
+      'As foretold by Nostradamus',
+      'Orange cat supremacy!!!!!',
+      'Now with 50% less 7/11s!',
+      'Rate your local dog park!',
+      'Creative mode is coming soon!',
+      'Tavern Cut = Chicago Style',
+      'Cat Guesser is a lie!'
+    ]
+    setSubtextState(phrases[parseInt(Math.random() * (phrases.length - 0) + 0)])
+  }
+
+  useEffect(() => {
+    phraseGenerator()
+  }, [])
 
   return (
     <div className="home">
@@ -14,6 +39,7 @@ const Home = () => {
             src={yelpGuesserLogo}
             alt="yelp guesser"
           />
+          <p id="main-logo-subtext">{subtextState}</p>
         </div>
       </div>
       <div className="carousel">
@@ -36,9 +62,9 @@ const Home = () => {
           ></img>
         </div>
       </div>
-      <div id="hot-guess-box">
-        <img id="hot-guess-img" src={hotGuessLogo} alt="hot guesses" />
-      </div>
+
+      <img id="hot-guess-img" src={hotGuessLogo} alt="hot guesses" />
+      <img id="cry-cat" src={cryCat} />
     </div>
   )
 }
