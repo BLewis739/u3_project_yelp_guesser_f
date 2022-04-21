@@ -8,6 +8,7 @@ import Header from './components/Header'
 import Quickplay from './pages/QuickPlay'
 import Home from './pages/Home'
 import Userpage from './pages/UserPage'
+import CatGuesser from './pages/CatGuesser'
 
 import { CheckSession } from './services/Auth'
 import './App.css'
@@ -115,6 +116,7 @@ const App = () => {
               />
             }
           />
+          <Route path="/catguesser" element={<CatGuesser />} />
         </Routes>
       </main>
     </div>
