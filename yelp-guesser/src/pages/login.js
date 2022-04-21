@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { LoginUser } from '../services/Auth'
 
-const Login = ({ setUser, toggleAuthenticated }) => {
+const Login = ({ user, setUser, toggleAuthenticated }) => {
   let navigate = useNavigate()
 
   const [formValues, setFormValues] = useState({

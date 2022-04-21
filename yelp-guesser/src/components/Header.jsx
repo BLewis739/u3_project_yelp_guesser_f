@@ -7,9 +7,26 @@ import questionMark from '../images/questionmark.png'
 import strawberry from '../images/strawberry.png'
 import pear from '../images/pear.png'
 import orange from '../images/orange.png'
+import {
+  GetFullWorldLeaderboard
+} from '../services/Leaderboard'
+import { useEffect } from 'react'
 
 const Header = (props) => {
+
   const [palette, setPalette] = useState('navBarRed')
+
+
+  const retrieveWorldLeaderboard = async () => {
+    const worldBoard = await GetFullWorldLeaderboard()
+    props.setWorldLeaderboardScores(worldBoard)
+  }
+
+  useEffect(() => {
+    retrieveWorldLeaderboard()
+  }, [])
+
+
   return (
     <header>
       <nav className={palette}>
@@ -26,7 +43,7 @@ const Header = (props) => {
           </div>
           <div className="nav">
             <Link to="/scores">
-              <img id="nav-scorelogo" src={leaderBoard} alt="yelp guesser" />
+              <img id="nav-scorelogo" src={leaderBoard} alt="yelp guesser"/>
             </Link>
           </div>
         </div>

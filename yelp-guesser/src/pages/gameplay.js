@@ -1,22 +1,19 @@
 import { useNavigate } from 'react-router-dom'
-import {
-  GetUserLeaderboard,
-  GetFullUserLeaderboard
-} from '../services/Leaderboard'
+import { GetFullUserLeaderboard } from '../services/Leaderboard'
 import { useEffect } from 'react'
 
-const Gameplay = ({ user, authenticated, setLeaderboardScores }) => {
+const Gameplay = ({ user, authenticated, setUserLeaderboardScores }) => {
   let navigate = useNavigate()
 
-  const retrieveLeaderboard = async (userId) => {
+  const retrieveUserLeaderboard = async (userId) => {
     const userBoard = await GetFullUserLeaderboard(userId)
-    setLeaderboardScores(userBoard)
+    setUserLeaderboardScores(userBoard)
   }
 
   const userIdString = user.id.toString()
 
   useEffect(() => {
-    retrieveLeaderboard(userIdString)
+    retrieveUserLeaderboard(userIdString)
   }, [])
 
   return user && authenticated ? (
