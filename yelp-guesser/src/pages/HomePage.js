@@ -76,13 +76,17 @@ const HomePage = (props) => {
   ////           ////
 
   const getBusinesses = async (zipCode) => {
-    let res = await axios.get(`http://localhost:3001/businesses${zipCode}`)
+    let res = await axios.get(
+      `https://yelp-guesser-b.herokuapp.com/businesses${zipCode}`
+    )
     console.log(res.data.businesses)
     setBusinesses(res.data.businesses)
   }
 
   const getBusinessReview = async (id) => {
-    let res = await axios.get(`http://localhost:3001/businessreviews/${id}`)
+    let res = await axios.get(
+      `https://yelp-guesser-b.herokuapp.com/businessreviews/${id}`
+    )
     let random = parseInt(Math.random() * (1 - 0) + 0)
     console.log(res.data.reviews.reviews[random])
     setReview(res.data.reviews.reviews[random].text)
