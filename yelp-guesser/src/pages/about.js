@@ -1,4 +1,5 @@
 import aboutLanding from '../images/about-landing.png'
+
 const About = () => {
   return (
     <div className="about">

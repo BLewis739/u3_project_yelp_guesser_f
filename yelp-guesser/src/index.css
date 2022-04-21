@@ -316,6 +316,12 @@ input {
   margin-left: 5px;
 }
 
+.signin-main img{
+  height:125px;
+  margin-top:10px;
+  margin-bottom:10px;
+}
+
 .signin{
 background-color: #edefec;
 border-radius: 16px;
@@ -361,6 +367,10 @@ form .signin-form{
 
 .signin-main h3{
   margin-top: 25px;
+}
+
+ .register-wrapper img{
+  height: 150px;
 }
 
 .register-button button{
@@ -525,44 +535,74 @@ form .signin-form{
   font-size: 32px;
 }
 
-/* ///////////////////////////////////////////////////////////////////////////// */
-/* ///////////////////////////// LEADERBOARD Page ////////////////////////////// */
-/* ///////////////////////////////////////////////////////////////////////////// */
-.scorepage{
-  display:flex;
-  justify-content: center;
-}
 .scores-wrapper{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  justify-self: center;
-  align-self: center;
-  height: 70vh;
-  width: 85vw;
-  margin-top: 70px;
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
 }
 
-.score-box{
-  height:75%;
-  width: 30%;
-  border: 4px solid black;
-  margin: 30px;
-}
-
-#scorebox-one{
-  background-color: #E71D36;
-}
-
-#scorebox-two{
+.your-scores{
+  width: 300px;
+  margin:auto;
   background-color: #2EC4B6;
-}
-#scorebox-three{
-  background-color: #FF9F1C;
+  color:#FDFFFC;
+  border-radius: 16px;
+  margin-top: 20px;
 }
 
-/* ///////////////////////////////////// */
+.your-scores h2{
+  padding-top: 5px;
+}
+
+.your-scores li{
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: 'Orelega One', cursive;
+  font-size: 20px;
+}
+
+.zip-leader{
+  width: 300px;
+  margin:auto;
+  background-color:#E71D36;
+  border-radius: 16px;
+  color:#FDFFFC;
+  margin-top: 20px;
+}
+.zip-leader h2{
+  padding-top: 5px;
+}
+
+.zip-leader li{
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: 'Orelega One', cursive;
+  font-size: 20px;
+}
+
+.leader-scores{
+  width: 300px;
+  margin:auto;
+  background-color: #FF9F1C;
+  border-radius: 16px;
+  color:#FDFFFC;
+  margin-top:20px;
+}
+
+.leader-scores h2{
+  padding-top: 5px;
+}
+
+.leader-scores li{
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: 'Orelega One', cursive;
+  font-size: 20px;
+}
 
 #hot-guess-box{
   display: flex;
@@ -647,9 +687,6 @@ font-size: 39px;
   width: 30%;
   border: 4px solid black;
   margin: 30px;
-  
-  
-  
 }
 .game-page-text{
   font-size: 55px;
@@ -668,7 +705,6 @@ font-size: 39px;
 }
 #local-img, #quick-img, #globe-img{
   height: 50%;
-  
   -webkit-filter: invert(100%); 
   filter: invert(100%);
 }
@@ -749,17 +785,18 @@ font-size: 39px;
 }
 #dollar-container{
   display:flex;
-  transform: translateY(5px);
+  top: 20px;
   position:relative;
+  left:585px;
 }
 #star-img{
-  
   width: 165px;
- 
 }
 #dollar-img{
+  position: relative;
   width: 165px;
- 
+  left: 585px;
+  top: 15px;
 }
 
 
@@ -770,70 +807,57 @@ font-size: 39px;
   padding: .1px;
   display: flex;
   flex-direction: row;
-  
   transform: translatey(-35px);
 
 }
 .dollars{
   height: 28px;
   width: 15px;
-  
   margin:2.6px;
   padding: .1px;
   display: flex;
   flex-direction: row;
-  
   transform: translatey(-35px);
-
 }
 
 #business-image{
   max-height: 400px;
   width: auto;
+}
 
-}
-#flare{
-  font-family: 'VT323', monospace;
-  color:#FF9F1C;
-  
-}
 .flareAnimationStop{
   opacity: 0;
   animation: none;
   position: absolute;
-
 }
 
 .flareAnimationGo{
   animation: flare 1s 1;
   font-weight: bolder;
-  z-index: 100;
-  font-size:60px;
+  z-index: -100;
+  font-size:44px;
   position: absolute;
-
-  
-  
 }
+
 #dollar-img{
   width: 80px;
 }
+
 #review{
   font-size: 24px;
 }
+
 .star-button-box{
-  width: 75vw;
-  background-color: #2EC4B6;
   border: 1px solid black;
-  
-  margin: 10px auto auto auto;
+  margin: 15px;
   padding: 10px;
 }
+
 @keyframes flare {
   99%  {
-    transform: translatey(-60px);
+    transform: translatey(-20px);
   }
   100%{
     opacity: 0;
   }
 }
-
