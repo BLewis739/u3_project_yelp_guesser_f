@@ -25,3 +25,12 @@ export const GetFullWorldLeaderboard = async () => {
     throw error
   }
 }
+
+export const SaveNewScore = async (data) => {
+  try {
+    const res = await Client.post('/score/new-score-full', data)
+    return res.data
+  } catch (error) {
+    throw error
+  }
+}

@@ -1,4 +1,21 @@
+import { SaveNewScore } from "../services/Leaderboard"
+import { useEffect, useState } from "react"
+
 const FinalScore = (props) => {
+
+  const [finalScore,setFinalScore] = useState(props.score)
+
+  const postScore = async (final) => {
+    await SaveNewScore({
+      userId: props.user.id,
+      points: final
+    })
+  }
+
+  useEffect(() => {
+    postScore(finalScore)
+  },[])
+
   return (
     <div>
   <h1>Final Score!</h1>
