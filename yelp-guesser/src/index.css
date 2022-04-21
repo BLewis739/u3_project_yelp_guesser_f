@@ -19,6 +19,11 @@ code {
     monospace;
 }
 
+
+/* ///////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////// NAVIGATION BAR //////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////// */
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -76,9 +81,6 @@ nav {
   z-index: 100;
   border-radius: 20px;
   line-height: 100px;
-
-
-
 }
 
 .accordian:hover{
@@ -86,11 +88,9 @@ nav {
   animation: expand;
   animation-duration: 1s;
   animation-fill-mode: forwards;
- 
-
 }
-@keyframes expand {
 
+@keyframes expand {
   
   100%  {
     display:block;
@@ -100,54 +100,65 @@ nav {
 
 }
 
-
-
 #nav-logo{
   height: 250%;
 }
+
 #nav-logo:hover{
   height: 250%;
   transform: translateY(10px)
 }
+
 #nav-gamelogo{
   height: 100%;
   margin: 10px 15px 0 15px;
   -webkit-filter: invert(100%); 
   filter: invert(100%);
 }
+
 #nav-gamelogo:hover{
   height: 100%;
   -webkit-filter: invert(0%); 
   filter: invert(0%);
 transform: translateY(8px);
 }
+
 #nav-aboutlogo{
   height: 100%;
   -webkit-filter: invert(100%); 
   filter: invert(100%);
   margin: 10px 0px 0px 10px
 }
+
 #nav-aboutlogo:hover{
   height: 100%;
   -webkit-filter: invert(0%); 
   filter: invert(0%);
 transform: translateY(5px);
 }
+
 #nav-scorelogo{
   height: 100%;
   margin: 10px 15px 0 15px;
   -webkit-filter: invert(100%); 
   filter: invert(100%);
 }
+
 #nav-scorelogo:hover{
   height: 100%;
   -webkit-filter: invert(0%); 
   filter: invert(0%);
 transform: translateY(5px);
 }
+
 #nav-username{
   margin: 30px;
 }
+
+#logout{
+margin-top: 30px;
+}
+
 nav a{
   text-decoration: none;
   color: #FDFFFC;
@@ -162,9 +173,9 @@ nav a:hover{
 
 #hot-guess-img{
   transform: translateY(-530px) translateX(350px);
-  
   z-index: -1000;
 }
+
 .carousel{
   padding: 2em 0;
   display: flex;
@@ -732,10 +743,6 @@ font-size: 39px;
   }
 
 }
-
-
-=======
-
 
 
 /* //////////////////////// */
