@@ -787,16 +787,18 @@ font-size: 39px;
   display:flex;
   top: 20px;
   position:relative;
-  left:585px;
+
 }
 #star-img{
   width: 165px;
 }
 #dollar-img{
-  position: relative;
+
   width: 165px;
-  left: 585px;
-  top: 15px;
+
+}
+#getready-img{
+  height:300px;
 }
 
 
