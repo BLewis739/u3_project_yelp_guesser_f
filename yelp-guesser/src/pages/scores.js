@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import {
   GetFullWorldLeaderboard,
   GetFullUserLeaderboard
@@ -12,9 +12,12 @@ const Scores = ({
   setWorldLeaderboardScores,
   setUserLeaderboardScores
 }) => {
+  const [worldButtonClicked, setWorldButtonClicked] = useState(false)
+  const [userButtonClicked, setUserButtonClicked] = useState(false)
+
   const retrieveWorldLeaderboard = async () => {
     const worldBoard = await GetFullWorldLeaderboard()
-    localStorage.setItem('worldBoard', JSON.stringify(worldBoard))
+    //localStorage.setItem('worldBoard', JSON.stringify(worldBoard))
     setWorldLeaderboardScores(worldBoard)
   }
 
@@ -25,21 +28,50 @@ const Scores = ({
   const retrieveUserLeaderboard = async (userId) => {
     const userBoard = await GetFullUserLeaderboard(userId)
     setUserLeaderboardScores(userBoard)
-    localStorage.setItem('userBoard', JSON.stringify(userBoard))
+    //localStorage.setItem('userBoard', JSON.stringify(userBoard))
   }
 
-  const userIdString = user.id.toString()
-
   useEffect(() => {
+    const userIdString = user.id.toString()
     retrieveUserLeaderboard(userIdString)
+    setWorldButtonClicked(false)
+    setUserButtonClicked(false)
   }, [])
+
+  const showWorldLeaderboard = () => {
+    return userButtonClicked ? (
+      <li>
+        <div className="points">{worldLeaderboardScores[0].points}</div>
+        <div className="username">{worldLeaderboardScores[0].username}</div>
+        <div className="date">{worldLeaderboardScores[0].date}</div>
+      </li>
+    ) : (
+      <div></div>
+    )
+  }
+
+  const showUserLeaderboard = () => {
+    return userButtonClicked ? (
+      <li>
+        <div className="points">{userLeaderboardScores[0].points}</div>
+        <div className="date">{userLeaderboardScores[0].date}</div>
+      </li>
+    ) : (
+      <div></div>
+    )
+  }
+
+  const handleUserClick = () => {
+    setUserButtonClicked(true)
+  }
 
   return user && authenticated ? (
     <div className="scores-wrapper">
       <div className="your-scores">
         <h2>{user.username}'s High Scores</h2>
-        <button>Show scores</button>
+        <button onClick={handleUserClick}>Show scores</button>
         <ol>
+          {}
           {/*
           {userLeaderboardScores.map((item) => (
             <li>
