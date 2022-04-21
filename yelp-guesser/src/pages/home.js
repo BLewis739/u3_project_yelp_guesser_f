@@ -16,14 +16,16 @@ const Home = () => {
       'In full TECHNICOLOR!',
       'Made from meat products',
       'As foretold by Nostradamus',
-      'Orange cat supremacy!!!!!',
+      'Orange cat supremacy!!!',
       'Now with 50% less 7/11s!',
       'Rate your local dog park!',
       'Creative mode is coming soon!',
       'Tavern Cut = Chicago Style',
       'Cat Guesser is a lie!',
       'Apply directly to the forehead',
-      'Now with 50% more Taco Bells!'
+      'Now with 50% more Taco Bell!',
+      'Taste the meat, not the heat',
+      'Its a secret to everybody.'
     ]
     setSubtextState(phrases[parseInt(Math.random() * (phrases.length - 0) + 0)])
   }
