@@ -15,6 +15,15 @@ const Header = (props) => {
   const [palette, setPalette] = useState('navBarRed')
 
 
+  // const retrieveWorldLeaderboard = async () => {
+  //   const worldBoard = await GetFullWorldLeaderboard()
+  //   props.setWorldLeaderboardScores(worldBoard)
+  // }
+
+  // useEffect(() => {
+  //   retrieveWorldLeaderboard()
+  // }, [])
+
   const handleLogOut = () => {
     setUser(null)
     toggleAuthenticated(false)

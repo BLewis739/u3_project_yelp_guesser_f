@@ -13,13 +13,15 @@ import threeHalfStars from '../images/extra_large_3_half.png'
 import fourStars from '../images/extra_large_4.png'
 import fourHalfStars from '../images/extra_large_4_half.png'
 import fiveStar from '../images/extra_large_5.png'
-import noDollars from '../images/nodollars.png'
-import oneDollar from '../images/onedollar.png'
-import twoDollars from '../images/twodollars.png'
-import threeDollars from '../images/threedollars.png'
-import fourDollars from '../images/fourdollars.png'
+import noDollars from '../images/new0dollar.PNG'
+import oneDollar from '../images/new1dollar.PNG'
+import twoDollars from '../images/new2dollar.PNG'
+import threeDollars from '../images/new3dollar.PNG'
+import fourDollars from '../images/new4dollar.PNG'
+import quickPlay from '../images/quicklogo.png'
+import FinalScore from '../components/FinalScore'
 
-const HomePage = () => {
+const HomePage = (props) => {
   ////                   ////
   //// State & Variables ////
   ////                   ////
@@ -63,20 +65,28 @@ const HomePage = () => {
     reviewScore: ''
   })
 
-  let zipCode = '60634'
+  const [formValue, setFormValue] = useState({
+    zipCode: ''
+  })
+
+  const [countDown, setCountDown] = useState(3)
 
   ////           ////
   //// Functions ////
   ////           ////
 
   const getBusinesses = async (zipCode) => {
-    let res = await axios.get(`http://localhost:3001/businesses${zipCode}`)
+    let res = await axios.get(
+      `https://yelp-guesser-b.herokuapp.com/businesses${zipCode}`
+    )
     console.log(res.data.businesses)
     setBusinesses(res.data.businesses)
   }
 
   const getBusinessReview = async (id) => {
-    let res = await axios.get(`http://localhost:3001/businessreviews/${id}`)
+    let res = await axios.get(
+      `https://yelp-guesser-b.herokuapp.com/businessreviews/${id}`
+    )
     let random = parseInt(Math.random() * (1 - 0) + 0)
     console.log(res.data.reviews.reviews[random])
     setReview(res.data.reviews.reviews[random].text)
@@ -348,33 +358,71 @@ const HomePage = () => {
       await setRoundBusiness()
     }
   }
+  const handleChange = (event) => {
+    const { name, value } = event.target
+    console.log(name)
+    const newValues = (prevState) => {
+      return {
+        ...prevState,
+        [name]: value
+      }
+    }
+    setFormValue(newValues)
+    console.log(formValue)
+  }
+  const countDownTimer = async () => {
+    setTimeout(() => setCountDown(2), 1000)
+    setTimeout(() => setCountDown(1), 2000)
+    setTimeout(() => setCountDown(0), 3000)
+    setTimeout(() => setRound(1), 3500)
+  }
 
   ////            ////
   //// useEffect  ////
   ////            ////
 
   useEffect(() => {
-    getBusinesses(zipCode)
+    // getBusinesses(zipCode)
   }, [])
 
   ////        ////
   //// Render ////
   ////        ////
-
+  const { zip } = formValue
   switch (startState) {
     //  Case 0 //
 
     case 0:
       return (
         <div>
-          <button
-            onClick={() => {
-              setRound(1)
-              setScore(0)
-            }}
-          >
-            Start Game
-          </button>
+          <div className="start-state-box">
+            <img src={quickPlay} />
+            <h3>ENTER A ZIPCODE</h3>
+            <form>
+              <input name="zip" onChange={handleChange} />
+              <button
+                id="next-button"
+                onClick={(event) => {
+                  event.preventDefault()
+                  console.log(zip)
+                  getBusinesses(zip)
+                }}
+              >
+                LOCK IN ZIPCODE
+              </button>
+            </form>
+            <button
+              disabled={businesses.length > 1 ? false : true}
+              id="next-button"
+              onClick={() => {
+                setRound('Get Ready!')
+                setScore(0)
+                countDownTimer()
+              }}
+            >
+              START
+            </button>
+          </div>
         </div>
       )
 
@@ -787,17 +835,21 @@ const HomePage = () => {
     case 13:
       return (
         <div>
-          <h1>Final Score!</h1>
-          <h2>{score}</h2>
-          <button
-            id="next-button"
-            onClick={() => {
-              setRound(0)
-              setScore(0)
-            }}
-          >
-            next
-          </button>
+          <FinalScore
+            score={score}
+            setRound={setRound}
+            setScore={setScore}
+            setCountDown={setCountDown}
+            user={props.user}
+            authenticated={props.authenticated}
+          />
+        </div>
+      )
+    case 'Get Ready!':
+      return (
+        <div>
+          <h1>Get Ready!</h1>
+          <h1>{countDown}</h1>
         </div>
       )
   }

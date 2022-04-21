@@ -8,9 +8,11 @@ import Header from './components/Header'
 import Quickplay from './pages/QuickPlay'
 import Home from './pages/Home'
 import Userpage from './pages/UserPage'
+
 import { CheckSession } from './services/Auth'
 import './App.css'
 import { useEffect, useState } from 'react'
+import HomePage from './pages/HomePage'
 
 const App = () => {
   const [authenticated, toggleAuthenticated] = useState(false)
@@ -97,6 +99,10 @@ const App = () => {
             }
           />
           <Route path="/quickplay" element={<Quickplay />} />
+          <Route
+            path="/quickgame"
+            element={<HomePage user={user} authenticated={authenticated} />}
+          />
           <Route path="/register" element={<Register />} />
           <Route
             path="/userpage"

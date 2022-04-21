@@ -20,7 +20,6 @@ const About = () => {
           ></img>
           <h3 className="dev-name">Nick Lopez</h3>
           <a href="https://github.com/nicklope">Check out Nick's Github</a>
-          <p>Blurb about Nick</p>
         </div>
 
         <div className="dev-card2">
@@ -30,7 +29,6 @@ const About = () => {
           ></img>
           <h3 className="dev-name">Brad Lewis</h3>
           <a href="https://github.com/BLewis739">Check out Brad's Github</a>
-          <p>Blurb about Brad</p>
         </div>
 
         <div className="dev-card3">
@@ -40,10 +38,6 @@ const About = () => {
           ></img>
           <h3 className="dev-name">Mily Wendland</h3>
           <a href="https://github.com/milywendland">Check out Mily's Github</a>
-          <p>
-            Mily is a former professional coffee snob who loves gaming
-            (especially Minecraft), bright colors, and CSS.
-          </p>
         </div>
       </div>
     </div>

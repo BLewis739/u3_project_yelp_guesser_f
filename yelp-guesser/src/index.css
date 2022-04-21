@@ -525,74 +525,44 @@ form .signin-form{
   font-size: 32px;
 }
 
+/* ///////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////// LEADERBOARD Page ////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////// */
+.scorepage{
+  display:flex;
+  justify-content: center;
+}
 .scores-wrapper{
-  margin-top: 10px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  justify-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-self: center;
+  align-self: center;
+  height: 70vh;
+  width: 85vw;
+  margin-top: 70px;
 }
 
-.your-scores{
-  width: 300px;
-  margin:auto;
+.score-box{
+  height:75%;
+  width: 30%;
+  border: 4px solid black;
+  margin: 30px;
+}
+
+#scorebox-one{
+  background-color: #E71D36;
+}
+
+#scorebox-two{
   background-color: #2EC4B6;
-  color:#FDFFFC;
-  border-radius: 16px;
-  margin-top: 20px;
 }
-
-.your-scores h2{
-  padding-top: 5px;
-}
-
-.your-scores li{
-  margin-bottom: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  font-family: 'Orelega One', cursive;
-  font-size: 20px;
-}
-
-.zip-leader{
-  width: 300px;
-  margin:auto;
-  background-color:#E71D36;
-  border-radius: 16px;
-  color:#FDFFFC;
-  margin-top: 20px;
-}
-.zip-leader h2{
-  padding-top: 5px;
-}
-
-.zip-leader li{
-  margin-bottom: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  font-family: 'Orelega One', cursive;
-  font-size: 20px;
-}
-
-.leader-scores{
-  width: 300px;
-  margin:auto;
+#scorebox-three{
   background-color: #FF9F1C;
-  border-radius: 16px;
-  color:#FDFFFC;
-  margin-top:20px;
 }
 
-.leader-scores h2{
-  padding-top: 5px;
-}
-
-.leader-scores li{
-  margin-bottom: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  font-family: 'Orelega One', cursive;
-  font-size: 20px;
-}
+/* ///////////////////////////////////// */
 
 #hot-guess-box{
   display: flex;
@@ -779,9 +749,8 @@ font-size: 39px;
 }
 #dollar-container{
   display:flex;
-  top: 20px;
+  transform: translateY(5px);
   position:relative;
-  left:585px;
 }
 #star-img{
   
@@ -789,10 +758,8 @@ font-size: 39px;
  
 }
 #dollar-img{
-  position: relative;
   width: 165px;
-  left: 585px;
-  top: 15px;
+ 
 }
 
 
@@ -825,6 +792,11 @@ font-size: 39px;
   width: auto;
 
 }
+#flare{
+  font-family: 'VT323', monospace;
+  color:#FF9F1C;
+  
+}
 .flareAnimationStop{
   opacity: 0;
   animation: none;
@@ -835,8 +807,8 @@ font-size: 39px;
 .flareAnimationGo{
   animation: flare 1s 1;
   font-weight: bolder;
-  z-index: -100;
-  font-size:44px;
+  z-index: 100;
+  font-size:60px;
   position: absolute;
 
   
@@ -849,17 +821,19 @@ font-size: 39px;
   font-size: 24px;
 }
 .star-button-box{
-  
-  
+  width: 75vw;
+  background-color: #2EC4B6;
   border: 1px solid black;
-  margin: 15px;
+  
+  margin: 10px auto auto auto;
   padding: 10px;
 }
 @keyframes flare {
   99%  {
-    transform: translatey(-20px);
+    transform: translatey(-60px);
   }
   100%{
     opacity: 0;
   }
 }
+
