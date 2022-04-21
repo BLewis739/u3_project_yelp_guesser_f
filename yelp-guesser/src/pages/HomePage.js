@@ -13,11 +13,12 @@ import threeHalfStars from '../images/extra_large_3_half.png'
 import fourStars from '../images/extra_large_4.png'
 import fourHalfStars from '../images/extra_large_4_half.png'
 import fiveStar from '../images/extra_large_5.png'
-import noDollars from '../images/nodollars.png'
-import oneDollar from '../images/onedollar.png'
-import twoDollars from '../images/twodollars.png'
-import threeDollars from '../images/threedollars.png'
-import fourDollars from '../images/fourdollars.png'
+import noDollars from '../images/NewNoDollars.PNG'
+import oneDollar from '../images/NewOneDollar.PNG'
+import twoDollars from '../images/NewTwoDollar.PNG'
+import threeDollars from '../images/NewThreeDollar.PNG'
+import fourDollars from '../images/NewFourDollar.PNG'
+import quickPlay from '../images/quicklogo.png'
 
 const HomePage = () => {
   ////                   ////
@@ -63,7 +64,11 @@ const HomePage = () => {
     reviewScore: ''
   })
 
-  let zipCode = '60634'
+  const [formValue, setFormValue] = useState({
+    zipCode: ''
+  })
+
+  const [countDown, setCountDown] = useState(3)
 
   ////           ////
   //// Functions ////
@@ -348,33 +353,71 @@ const HomePage = () => {
       await setRoundBusiness()
     }
   }
+  const handleChange = (event) => {
+    const { name, value } = event.target
+    console.log(name)
+    const newValues = (prevState) => {
+      return {
+        ...prevState,
+        [name]: value
+      }
+    }
+    setFormValue(newValues)
+    console.log(formValue)
+  }
+  const countDownTimer = async () => {
+    setTimeout(() => setCountDown(2), 1000)
+    setTimeout(() => setCountDown(1), 2000)
+    setTimeout(() => setCountDown(0), 3000)
+    setTimeout(() => setRound(1), 3500)
+  }
 
   ////            ////
   //// useEffect  ////
   ////            ////
 
   useEffect(() => {
-    getBusinesses(zipCode)
+    // getBusinesses(zipCode)
   }, [])
 
   ////        ////
   //// Render ////
   ////        ////
-
+  const { zip } = formValue
   switch (startState) {
     //  Case 0 //
 
     case 0:
       return (
         <div>
-          <button
-            onClick={() => {
-              setRound(1)
-              setScore(0)
-            }}
-          >
-            Start Game
-          </button>
+          <div className="start-state-box">
+            <img src={quickPlay} />
+            <h3>ENTER A ZIPCODE</h3>
+            <form>
+              <input name="zip" onChange={handleChange} />
+              <button
+                id="next-button"
+                onClick={(event) => {
+                  event.preventDefault()
+                  console.log(zip)
+                  getBusinesses(zip)
+                }}
+              >
+                LOCK IN ZIPCODE
+              </button>
+            </form>
+            <button
+              disabled={businesses.length > 1 ? false : true}
+              id="next-button"
+              onClick={() => {
+                setRound('Get Ready!')
+                setScore(0)
+                countDownTimer()
+              }}
+            >
+              START
+            </button>
+          </div>
         </div>
       )
 
@@ -798,6 +841,13 @@ const HomePage = () => {
           >
             next
           </button>
+        </div>
+      )
+    case 'Get Ready!':
+      return (
+        <div>
+          <h1>Get Ready!</h1>
+          <h1>{countDown}</h1>
         </div>
       )
   }
