@@ -22,7 +22,7 @@ import quickPlay from '../images/quicklogo.png'
 import getReady from '../images/getready.PNG'
 import nextArrow from '../images/arrow.png'
 import FinalScore from '../components/FinalScore'
-
+import globeLogo from '../images/globelogo.webp'
 const GlobalPlay = (props) => {
   ////                   ////
   //// State & Variables ////
@@ -80,7 +80,9 @@ const GlobalPlay = (props) => {
   ////           ////
 
   const getBusinesses = async (zipCode) => {
-    let res = await axios.get(`https://localhost:3001/businesses${zipCode}`)
+    let res = await axios.get(
+      `https://yelp-guesser-b.herokuapp.com/businesses${zipCode}`
+    )
     console.log(res.data.businesses)
     setBusinesses(res.data.businesses)
   }
@@ -384,7 +386,7 @@ const GlobalPlay = (props) => {
     setTimeout(() => setCountDown(0), 3000)
     setTimeout(() => setRound(1), 3500)
   }
-  const phraseGenerator = () => {
+  const cityGenerator = () => {
     let codes = [
       'tokyo',
       'madrid',
@@ -392,15 +394,7 @@ const GlobalPlay = (props) => {
       'rome',
       'london',
       'warsaw',
-
-      'moscow',
-      'belfast',
-      'seoul',
-      'bangladesh',
-      'dubai',
-      '00810',
-      'medellin',
-      'dublin'
+      'melbourne'
     ]
     setZipCode(codes[parseInt(Math.random() * (codes.length - 0) + 0)])
   }
@@ -410,7 +404,7 @@ const GlobalPlay = (props) => {
   ////            ////
 
   useEffect(() => {
-    phraseGenerator()
+    cityGenerator()
   }, [])
 
   ////        ////
@@ -424,12 +418,11 @@ const GlobalPlay = (props) => {
       return (
         <div>
           <div className="start-state-box">
-            <img src={quickPlay} />
+            <img id="globe-logo" src={globeLogo} />
 
             <button
               id="next-button"
-              onClick={(event) => {
-                event.preventDefault()
+              onClick={() => {
                 console.log(zip)
                 getBusinesses(zipCode)
                 console.log(zipCode)

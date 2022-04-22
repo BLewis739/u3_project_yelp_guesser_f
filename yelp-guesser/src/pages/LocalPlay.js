@@ -23,6 +23,7 @@ import getReady from '../images/getready.PNG'
 import nextArrow from '../images/arrow.png'
 import FinalScore from '../components/FinalScore'
 import localPlay from '../images/localplay.png'
+import hardHat from '../images/hardhat.webp'
 
 const LocalPlay = (props) => {
   ////                   ////
@@ -379,8 +380,8 @@ const LocalPlay = (props) => {
   ////            ////
 
   useEffect(() => {
-    console.log(props.user)
-    getBusinesses()
+    // console.log(props.user)
+    // getBusinesses()
   }, [])
 
   ////        ////
@@ -394,18 +395,8 @@ const LocalPlay = (props) => {
       return (
         <div>
           <div className="start-state-box">
-            <img
-              src={localPlay}
-              id="next-button"
-              onClick={() => {
-                console.log(zip)
-                // getBusinesses(zip)
-                setStart('Get Ready!')
-                toggleReviewBoolean(false)
-                setScore(0)
-                countDownTimer()
-              }}
-            />
+            <img src={hardHat} id="next-button" />
+            <h1>Under Development</h1>
           </div>
         </div>
       )
