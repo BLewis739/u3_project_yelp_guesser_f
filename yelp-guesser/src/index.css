@@ -377,6 +377,33 @@ form .signin-form{
   margin-top: 2px;
 }
 
+.update{
+  height: 250px;
+  width: 250px;
+  padding-top: 5px;
+  margin: auto;
+  background-color: #edefec;
+  border-radius: 16px;
+  margin-top: 10px;
+}
+
+.dont-click{
+  height: 150px;
+  width: 200px;
+  background-color: #E71D36;
+  margin:auto;
+  margin-top: 20px;
+  border-radius: 16px;
+  color:#FDFFFC;
+}
+.dont-click h3{
+  padding-top: 15px;
+}
+
+.username{
+  padding-bottom: 10px;
+}
+
 .about h2{
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 32px;
@@ -534,6 +561,7 @@ form .signin-form{
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 32px;
 }
+
 
 .scores-wrapper{
   margin-top: 10px;
