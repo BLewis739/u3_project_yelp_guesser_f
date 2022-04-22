@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom'
 import { UpdatePassword } from '../services/Auth'
-import { DeleteUser } from '../services/Auth'
+// import { DeleteUser } from '../services/Auth'
 import { useState } from 'react'
-
+import hardHat from '../images/hardhat.webp'
 const Userpage = ({
   user,
   authenticated,
@@ -23,19 +23,24 @@ const Userpage = ({
   }
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    const payload = await UpdatePassword(formValues)
-    setFormValues({
-      oldPassword: '',
-      newPassword: ''
-    })
-    setUser(payload)
-    toggleAuthenticated(true)
-    navigate('/')
+    // e.preventDefault()
+    // const payload = await UpdatePassword(formValues)
+    // setFormValues({
+    //   oldPassword: '',
+    //   newPassword: ''
+    // })
+    // setUser(payload)
+    // toggleAuthenticated(true)
+    // navigate('/')
   }
 
   return user && authenticated ? (
     <div>
+      {' '}
+      <div id="construction">
+        <img id="under-construction" src={hardHat} />
+        <h1>User Page is still baking in the oven...</h1>
+      </div>
       <div className="your-scores">
         <h2>{user.username}'s Profile</h2>
         <div className="username">Username: {user.username}</div>
@@ -76,7 +81,7 @@ const Userpage = ({
       </div>
       <div className="dont-click">
         <h3>DONT CLICK THIS BUTTON</h3>
-        <button onClick={DeleteUser}>Delete Account</button>
+        <button>Delete Account</button>
       </div>
     </div>
   ) : (

@@ -29,7 +29,7 @@ const FinalScore = (props) => {
       props.setCountDown(3)
     }}
   >
-    next
+    Try Again?
   </button>
   </div>
   )

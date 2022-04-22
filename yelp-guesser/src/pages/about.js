@@ -10,7 +10,7 @@ const About = () => {
           Yelp Guesser is a guessing game inspired by GeoGuessr. It was created
           with the Yelp Fusion API, PostgreSQLs, Expres, React, and NodeJs. It
           was created by Nick Lopez, Brad Lewis, and Mily Wendland during their
-          Software Engineering Intensive at General Assembly in April, 2022.
+          Software Engineering Immersive at General Assembly in April, 2022.
         </p>
       </div>
       <div className="dev-wrapper">

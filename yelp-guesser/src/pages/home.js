@@ -26,7 +26,11 @@ const Home = () => {
       'Apply directly to the forehead',
       'Now with 50% more Taco Bell!',
       'Taste the meat, not the heat',
-      'Its a secret to everybody.'
+      'Its a secret to everybody.',
+      '"IT JUST WORKS, ALRIGHT?"',
+      'Zap to the extreme!',
+      '///// Kanye 2024 /////',
+      'Styled in pure CSS'
     ]
     setSubtextState(phrases[parseInt(Math.random() * (phrases.length - 0) + 0)])
   }

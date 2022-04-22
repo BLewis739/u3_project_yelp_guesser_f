@@ -14,7 +14,7 @@
 
 ## **_Concept_**
 
-The gameplay of the app is inspired by the popular game [GeoGuessr](https://www.geoguessr.com/), where players are shown an image from Google Street View of a random world location, and try to guess where it is. In our version, players are presented images of restaurant meals from the Yelp Fusion API. Based on the appearance of the food in the image, players guess the Yelp star rating of its restaurant. After viewing 5 images and making 5 guesses, a player's score is calculated.
+The gameplay of the app is inspired by the popular game [GeoGuessr](https://www.geoguessr.com/), where players are shown an image from Google Street View of a random world location, and try to guess where it is. In our version, players are presented images of restaurant meals from the Yelp Fusion API. Based on the appearance of the food in the image, players guess the Yelp star rating of its restaurant. After viewing a series of images and making guesses, a score is calculated.
 
 ---
 
@@ -43,8 +43,12 @@ To play Yelp Guesser, users need to register for an account. Once they have crea
 
 ## **_Future Updates_**
 
+- [ ] "Hot Guesses" with changing games
 - [ ] Cat Guesser Game
-- [ ] World Play
+- [ ] Local Play
+- [ ] User Page
+- [ ] More Robust Leaderboards
+- [ ] Display Round Businesses at end of Game
 
 ---
 
