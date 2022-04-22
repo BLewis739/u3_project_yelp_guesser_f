@@ -783,18 +783,18 @@ font-size: 39px;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
   justify-self: center;
   align-self: center;
   height: 70vh;
   width: 85vw;
-  margin-top: 70px;
+  margin-top: 30px;
 }
 .leader-scores{
-  height:75%;
-  width: 50%;
+  height:650px;
+  width: 30%;
   border: 4px solid black;
   margin: 30px;
+  position: fixed;
 }
 .leader-scores:hover{
 cursor: pointer;
@@ -804,15 +804,24 @@ cursor: pointer;
   -webkit-filter: invert(100%); 
   filter: invert(100%);
 }
- #leaderboard-list{
-   line-height: 100%;
- }
- li{
-   line-height: 12px;
-   
-   justify-self: center;
-   align-items: center;
- }
+#leaderboard-list{
+  line-height: 100%;
+}
+li{
+  line-height: 24px;
+  border-top: #2EC4B6 2px solid;
+  justify-self: center;
+  align-items: center;
+  margin-right: 40px;
+}
+
+ol {
+  list-style-position: outside;
+}
+
+li::marker {
+  color:#DDDFDC;
+}
 
 
 .points {
@@ -821,12 +830,12 @@ cursor: pointer;
   color:#E71D36
 }
 .username{
-  color:#2EC4B6
+  color: #FDFFFC
 }
 
 .date {
   font-size:smaller;
-  color: #DDDFDC;
+  color: #CDCFCC;
 }
 
 /* ///////////////////////////////////////////////////////////////////////////// */
