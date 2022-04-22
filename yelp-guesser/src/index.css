@@ -378,6 +378,33 @@ form .signin-form{
   margin-top: 2px;
 }
 
+.update{
+  height: 250px;
+  width: 250px;
+  padding-top: 5px;
+  margin: auto;
+  background-color: #edefec;
+  border-radius: 16px;
+  margin-top: 10px;
+}
+
+.dont-click{
+  height: 150px;
+  width: 200px;
+  background-color: #E71D36;
+  margin:auto;
+  margin-top: 20px;
+  border-radius: 16px;
+  color:#FDFFFC;
+}
+.dont-click h3{
+  padding-top: 15px;
+}
+
+.username{
+  padding-bottom: 10px;
+}
+
 .about h2{
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 32px;
@@ -537,6 +564,13 @@ form .signin-form{
 }
 
 
+.scores-wrapper{
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+}
+
 
 
 
@@ -639,6 +673,7 @@ font-size: 39px;
   height:60px;
   bottom:-10px;
 }
+
 /* ///////////////////////////////////////////////////////////////////////////// */
 /* ///////////////////////////// GAME SELECT PAGE ////////////////////////////// */
 /* ///////////////////////////////////////////////////////////////////////////// */
@@ -969,5 +1004,35 @@ cursor: pointer;
 /* ///////////////////////////////////////////////////////////////////////////// */
 
 .cat-guesser-logo img{
-  height: 200px;
+  height: 150px;
+}
+
+.coming-soon img{
+  margin-top:20px;
+  height:400px;
+}
+
+.coming-soon img:hover{
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 600px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
 }
