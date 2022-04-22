@@ -11,6 +11,10 @@ const Quickplay = () => {
   const [spinClassTwo, setSpinClassTwo] = useState(false)
   const [spinClassThree, setSpinClassThree] = useState(false)
 
+  const [textSpinClassOne, setTextSpinClassOne] = useState(false)
+  const [textSpinClassTwo, setTextSpinClassTwo] = useState(false)
+  const [textSpinClassThree, setTextSpinClassThree] = useState(false)
+
   const [subtextClassOne, setSubtextClassOne] = useState(false)
   const [subtextClassTwo, setSubtextClassTwo] = useState(false)
   const [subtextClassThree, setSubtextClassThree] = useState(false)
@@ -20,23 +24,32 @@ const Quickplay = () => {
   return (
     <div id="game-page">
       <div className="game-select">
-        <div className="gamebox" id="gamebox-one">
+        <div
+          className="gamebox"
+          id="gamebox-one"
+          onMouseOver={() => (
+            setSubtextClassOne(true),
+            setSpinClassOne(true),
+            setTextSpinClassOne(true)
+          )}
+          onMouseLeave={() => (
+            setSubtextClassOne(false),
+            setSpinClassOne(false),
+            setTextSpinClassOne(false)
+          )}
+          onClick={() => {
+            navigate('/localplay')
+          }}
+        >
           <img
             id="local-img"
             className={spinClassOne ? 'spin' : undefined}
             src={localPlay}
           />
           <h1
-            className="game-page-text"
-            onMouseOver={() => (
-              setSubtextClassOne(true), setSpinClassOne(true)
-            )}
-            onMouseLeave={() => (
-              setSubtextClassOne(false), setSpinClassOne(false)
-            )}
-            onClick={() => {
-              navigate('/localplay')
-            }}
+            className={
+              textSpinClassOne ? 'game-page-text-spin' : 'game-page-text'
+            }
           >
             Local Play
           </h1>
@@ -47,7 +60,21 @@ const Quickplay = () => {
             Play with businesses in your backyard!
           </p>
         </div>
-        <div className="gamebox" id="gamebox-two">
+        <div
+          className="gamebox"
+          id="gamebox-two"
+          onMouseOver={() => (
+            setSubtextClassTwo(true),
+            setSpinClassTwo(true),
+            setTextSpinClassTwo(true)
+          )}
+          onMouseLeave={() => (
+            setSubtextClassTwo(false),
+            setSpinClassTwo(false),
+            setTextSpinClassTwo(false)
+          )}
+          onClick={() => navigate('/quickgame')}
+        >
           <img
             id="quick-img"
             className={spinClassTwo ? 'spin' : undefined}
@@ -55,14 +82,9 @@ const Quickplay = () => {
           />
 
           <h1
-            className="game-page-text"
-            onMouseOver={() => (
-              setSubtextClassTwo(true), setSpinClassTwo(true)
-            )}
-            onMouseLeave={() => (
-              setSubtextClassTwo(false), setSpinClassTwo(false)
-            )}
-            onClick={() => navigate('/quickgame')}
+            className={
+              textSpinClassTwo ? 'game-page-text-spin' : 'game-page-text'
+            }
           >
             Quick Play
           </h1>
@@ -73,21 +95,30 @@ const Quickplay = () => {
             Enter a zipcode and play!
           </p>
         </div>
-        <div className="gamebox" id="gamebox-three">
+        <div
+          className="gamebox"
+          id="gamebox-three"
+          onMouseOver={() => (
+            setSubtextClassThree(true),
+            setSpinClassThree(true),
+            setTextSpinClassThree(true)
+          )}
+          onMouseLeave={() => (
+            setSubtextClassThree(false),
+            setSpinClassThree(false),
+            setTextSpinClassThree(false)
+          )}
+          onClick={() => navigate('/globalplay')}
+        >
           <img
             id="globe-img"
             className={spinClassThree ? 'spin' : undefined}
             src={globalPlay}
           />
           <h1
-            className="game-page-text"
-            onMouseOver={() => (
-              setSubtextClassThree(true), setSpinClassThree(true)
-            )}
-            onMouseLeave={() => (
-              setSubtextClassThree(false), setSpinClassThree(false)
-            )}
-            onClick={() => navigate('/globalplay')}
+            className={
+              textSpinClassThree ? 'game-page-text-spin' : 'game-page-text'
+            }
           >
             Global Play
           </h1>
