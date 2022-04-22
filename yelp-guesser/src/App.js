@@ -13,10 +13,9 @@ import LocalPlay from './pages/LocalPlay'
 
 import CatGuesser from './pages/CatGuesser'
 
-
 import { CheckSession } from './services/Auth'
-import './App.css'
 import { useEffect, useState } from 'react'
+import './App.css'
 import HomePage from './pages/HomePage'
 import GlobalPlay from './pages/GlobalPlay'
 
