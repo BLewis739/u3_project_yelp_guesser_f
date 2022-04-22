@@ -798,13 +798,13 @@ font-size: 39px;
   width: 30%;
   border: 4px solid black;
   margin: 30px;
-  position: fixed;
+  
 }
 .leader-scores:hover{
 cursor: pointer;
 }
 #trophy{
-  height: 70%;
+  height: 50%;
   -webkit-filter: invert(100%); 
   filter: invert(100%);
 }

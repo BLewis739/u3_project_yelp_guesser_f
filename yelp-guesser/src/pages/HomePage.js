@@ -73,15 +73,7 @@ const HomePage = (props) => {
 
   const [countDown, setCountDown] = useState(3)
 
-  const [businessStore, setBusinessStore] = useState({
-    name: '',
-    image: '',
-    rating: '',
-    price: '',
-    id: '',
-    review: '',
-    reviewScore: ''
-  })
+  const [businessStore, setBusinessStore] = useState({})
 
   ////           ////
   //// Functions ////
@@ -368,7 +360,6 @@ const HomePage = (props) => {
         checkReviewScore(playerChoice)
         toggleReviewBoolean(false)
       } else if (!reviewBoolean) {
-        console.log('here!')
         checkScore(playerChoice)
       }
     }
