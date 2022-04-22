@@ -30,7 +30,7 @@ export const CheckSession = async () => {
 
 export const DeleteUser = async (data) => {
   try {
-    const res = await Client.delete('/auth/userpage', data)
+    const res = await Client.delete('/auth/user', data)
     return res.data
   } catch (error) {
     throw error
