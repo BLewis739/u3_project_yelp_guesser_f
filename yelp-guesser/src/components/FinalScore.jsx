@@ -11,10 +11,10 @@ const FinalScore = (props) => {
       points: final
     })
   }
-
+ const dummy = false
   useEffect(() => {
     postScore(finalScore)
-  },[])
+  },[dummy])
 
   return (
     <div>

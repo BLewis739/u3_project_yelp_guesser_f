@@ -29,8 +29,8 @@ useEffect(()=>{
   <div>
     <img id="business-image" src={props.business.image}/>
     <div id='hms-title'>
-      {props.review}
-      <p id ="review">How many stars did this review leave? (for {props.business.name})</p>
+      <div id='review-container'><h1 id="review-full">{'"'+props.review+'"'}</h1></div>
+      <p id ="review-question">How many stars did this review leave? (for {props.business.name})</p>
     <img  id='star-img' src={props.choice ? props.choice : props.starCount} alt="" />
     <div id='star-container'>
       <div onMouseOver={()=> props.setStarCount(oneStar)} onClick={()=>clickStar(oneStar)} className='stars' id='one'></div>
