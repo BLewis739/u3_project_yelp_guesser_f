@@ -26,13 +26,13 @@ To play Yelp Guesser, users need to register for an account. Once they have crea
 
 ## Entity Relation Diagram
 
-![ERD](/diagrams/ERD.png)
+![ERD](https://trello.com/1/cards/625867f6c461466868fdc4f2/attachments/625874c996a3f43a91018b35/previews/625874ca96a3f43a91018b72/download/Screen_Shot_2022-04-14_at_3.22.20_PM.png)
 
 ---
 
 ## Component Hierarchy Diagram
 
-![Component Hierarchy Diagram](/diagrams/ComponentHierarchyDiagram.png)
+![Component Hierarchy Diagram](https://trello.com/1/cards/625867f00274a874dca600b3/attachments/6258754d19662d1985a0177e/previews/6258754e19662d1985a017a1/download/Screen_Shot_2022-04-14_at_2.24.25_PM.png)
 
 ---
 
@@ -62,8 +62,8 @@ To play Yelp Guesser, users need to register for an account. Once they have crea
 
 ## **_Credits_**
 
-#### Yelp Fusion API: [Link](https://www.yelp.com/developers/documentation/v3/get_started)
+#### Yelp Fusion API: [API](https://www.yelp.com/developers/documentation/v3/get_started)
 
-#### GA Auth Lessons: [Link](https://github.com/SEI-R-2-22/u3_lesson_sequelize_auth) [Link](https://github.com/SEI-R-2-22/u3_lesson_react_auth)
+#### GA Auth Lessons: [Sequelize Auth](https://github.com/SEI-R-2-22/u3_lesson_sequelize_auth) [React Auth](https://github.com/SEI-R-2-22/u3_lesson_react_auth)
 
-#### We made our cool logo with PicsArt [Link](https://picsart.com/apps)
+#### We made our cool logo with PicsArt [PicsArt](https://picsart.com/apps)
