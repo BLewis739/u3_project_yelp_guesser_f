@@ -69,7 +69,7 @@ const Home = () => {
       </div>
 
       <img id="hot-guess-img" src={hotGuessLogo} alt="hot guesses" />
-      <img id="cry-cat" src={cryCat} />
+      <img id="cry-cat" src={cryCat} onClick={() => navigate('/catguesser')} />
     </div>
   )
 }
