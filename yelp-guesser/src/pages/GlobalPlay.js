@@ -22,8 +22,8 @@ import quickPlay from '../images/quicklogo.png'
 import getReady from '../images/getready.PNG'
 import nextArrow from '../images/arrow.png'
 import FinalScore from '../components/FinalScore'
-
-const HomePage = (props) => {
+import globeLogo from '../images/globelogo.webp'
+const GlobalPlay = (props) => {
   ////                   ////
   //// State & Variables ////
   ////                   ////
@@ -72,6 +72,8 @@ const HomePage = (props) => {
   })
 
   const [countDown, setCountDown] = useState(3)
+
+  const [zipCode, setZipCode] = useState(60634)
 
   ////           ////
   //// Functions ////
@@ -384,13 +386,25 @@ const HomePage = (props) => {
     setTimeout(() => setCountDown(0), 3000)
     setTimeout(() => setRound(1), 3500)
   }
+  const cityGenerator = () => {
+    let codes = [
+      'tokyo',
+      'madrid',
+      'rio',
+      'rome',
+      'london',
+      'warsaw',
+      'melbourne'
+    ]
+    setZipCode(codes[parseInt(Math.random() * (codes.length - 0) + 0)])
+  }
 
   ////            ////
   //// useEffect  ////
   ////            ////
 
   useEffect(() => {
-    // getBusinesses(zipCode)
+    cityGenerator()
   }, [])
 
   ////        ////
@@ -404,21 +418,19 @@ const HomePage = (props) => {
       return (
         <div>
           <div className="start-state-box">
-            <img src={quickPlay} />
-            <h3>ENTER A ZIPCODE</h3>
-            <form>
-              <input name="zip" onChange={handleChange} />
-              <button
-                id="next-button"
-                onClick={(event) => {
-                  event.preventDefault()
-                  console.log(zip)
-                  getBusinesses(zip)
-                }}
-              >
-                LOCK IN ZIPCODE
-              </button>
-            </form>
+            <img id="globe-logo" src={globeLogo} />
+
+            <button
+              id="next-button"
+              onClick={() => {
+                console.log(zip)
+                getBusinesses(zipCode)
+                console.log(zipCode)
+              }}
+            >
+              LOCK IN ZIPCODE
+            </button>
+
             <button
               disabled={businesses.length > 1 ? false : true}
               id="next-button"
@@ -874,4 +886,4 @@ const HomePage = (props) => {
       )
   }
 }
-export default HomePage
+export default GlobalPlay

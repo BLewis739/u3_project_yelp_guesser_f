@@ -3,6 +3,7 @@ import {
   GetFullWorldLeaderboard,
   GetFullUserLeaderboard
 } from '../services/Leaderboard'
+import trophy from '../images/trophy.png'
 
 const Scores = ({
   user,
@@ -14,79 +15,29 @@ const Scores = ({
 }) => {
   const [worldButtonClicked, setWorldButtonClicked] = useState(false)
   const [userButtonClicked, setUserButtonClicked] = useState(false)
+  const [spinClassOne, setSpinClassOne] = useState(false)
+  const [leaderboardBoolean, setLeaderBoardBoolean] = useState(false)
 
   const retrieveWorldLeaderboard = async () => {
     const worldBoard = await GetFullWorldLeaderboard()
-    //localStorage.setItem('worldBoard', JSON.stringify(worldBoard))
     setWorldLeaderboardScores(worldBoard)
   }
 
   useEffect(() => {
-    retrieveWorldLeaderboard()
-  }, [])
-
-  const retrieveUserLeaderboard = async (userId) => {
-    const userBoard = await GetFullUserLeaderboard(userId)
-    setUserLeaderboardScores(userBoard)
-    //localStorage.setItem('userBoard', JSON.stringify(userBoard))
-  }
-
-  useEffect(() => {
-    const userIdString = user.id.toString()
-    retrieveUserLeaderboard(userIdString)
     setWorldButtonClicked(false)
-    setUserButtonClicked(false)
+    setLeaderBoardBoolean(true)
   }, [])
-
-  const showWorldLeaderboard = () => {
-    return userButtonClicked ? (
-      <li>
-        <div className="points">{worldLeaderboardScores[0].points}</div>
-        <div className="username">{worldLeaderboardScores[0].username}</div>
-        <div className="date">{worldLeaderboardScores[0].date}</div>
-      </li>
-    ) : (
-      <div></div>
-    )
+  if (leaderboardBoolean) {
+    retrieveWorldLeaderboard()
+    setLeaderBoardBoolean(false)
   }
-
-  const showUserLeaderboard = () => {
-    return userButtonClicked ? (
-      <li>
-        <div className="points">{userLeaderboardScores[0].points}</div>
-        <div className="date">{userLeaderboardScores[0].date}</div>
-      </li>
-    ) : (
-      <div></div>
-    )
-  }
-
-  const handleUserClick = () => {
-    setUserButtonClicked(true)
-  }
-
-  return user && authenticated ? (
-    <div className="scores-wrapper">
-      <div className="your-scores">
-        <h2>{user.username}'s High Scores</h2>
-        <button onClick={handleUserClick}>Show scores</button>
-        <ol>
-          {}
-          {/*
-          {userLeaderboardScores.map((item) => (
-            <li>
-              <div className="points">{item.points}</div>
-              <div className="date">{item.date}</div>
-            </li>
-          ))}*/}
-        </ol>
-      </div>
-
+  return user && authenticated && userButtonClicked ? (
+    <div id="scores-page">
       <div className="leader-scores">
         <h2>World Leaderboard</h2>
-        <button>Show Scores</button>
-        <ol>
-          {/*<li>
+
+        <ol id="leaderboard-list">
+          <li>
             <div className="points">{worldLeaderboardScores[0].points}</div>
             <div className="username">{worldLeaderboardScores[0].username}</div>
             <div className="date">{worldLeaderboardScores[0].date}</div>
@@ -109,22 +60,29 @@ const Scores = ({
           <li>
             <div className="points">{worldLeaderboardScores[4].points}</div>
             <div className="username">{worldLeaderboardScores[4].username}</div>
-          <div className="date">{worldLeaderboardScores[4].date}</div>
-          </li>*/}
+            <div className="date">{worldLeaderboardScores[4].date}</div>
+          </li>
         </ol>
       </div>
     </div>
   ) : (
-    <div>
-      <div className="leader-scores">
+    <div id="scores-page">
+      <div
+        className="leader-scores"
+        onMouseOver={() => {
+          setSpinClassOne(true)
+        }}
+        onMouseLeave={() => setSpinClassOne(false)}
+        onClick={() => {
+          setUserButtonClicked(true)
+        }}
+      >
         <h2>World Leaderboard</h2>
-        <ol>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ol>
+        <img
+          id="trophy"
+          className={spinClassOne ? 'spin' : undefined}
+          src={trophy}
+        />
       </div>
     </div>
   )

@@ -22,8 +22,10 @@ import quickPlay from '../images/quicklogo.png'
 import getReady from '../images/getready.PNG'
 import nextArrow from '../images/arrow.png'
 import FinalScore from '../components/FinalScore'
+import localPlay from '../images/localplay.png'
+import hardHat from '../images/hardhat.webp'
 
-const HomePage = (props) => {
+const LocalPlay = (props) => {
   ////                   ////
   //// State & Variables ////
   ////                   ////
@@ -77,9 +79,9 @@ const HomePage = (props) => {
   //// Functions ////
   ////           ////
 
-  const getBusinesses = async (zipCode) => {
+  const getBusinesses = async () => {
     let res = await axios.get(
-      `https://yelp-guesser-b.herokuapp.com/businesses${zipCode}`
+      `https://yelp-guesser-b.herokuapp.com/businesses${props.user.zipcode}`
     )
     console.log(res.data.businesses)
     setBusinesses(res.data.businesses)
@@ -366,18 +368,6 @@ const HomePage = (props) => {
     await setRoundBusiness()
   }
 
-  const handleChange = (event) => {
-    const { name, value } = event.target
-    console.log(name)
-    const newValues = (prevState) => {
-      return {
-        ...prevState,
-        [name]: value
-      }
-    }
-    setFormValue(newValues)
-    console.log(formValue)
-  }
   const countDownTimer = async () => {
     setTimeout(() => setCountDown(2), 1000)
     setTimeout(() => setCountDown(1), 2000)
@@ -390,7 +380,8 @@ const HomePage = (props) => {
   ////            ////
 
   useEffect(() => {
-    // getBusinesses(zipCode)
+    // console.log(props.user)
+    // getBusinesses()
   }, [])
 
   ////        ////
@@ -404,33 +395,8 @@ const HomePage = (props) => {
       return (
         <div>
           <div className="start-state-box">
-            <img src={quickPlay} />
-            <h3>ENTER A ZIPCODE</h3>
-            <form>
-              <input name="zip" onChange={handleChange} />
-              <button
-                id="next-button"
-                onClick={(event) => {
-                  event.preventDefault()
-                  console.log(zip)
-                  getBusinesses(zip)
-                }}
-              >
-                LOCK IN ZIPCODE
-              </button>
-            </form>
-            <button
-              disabled={businesses.length > 1 ? false : true}
-              id="next-button"
-              onClick={() => {
-                setStart('Get Ready!')
-                toggleReviewBoolean(false)
-                setScore(0)
-                countDownTimer()
-              }}
-            >
-              START
-            </button>
+            <img src={hardHat} id="next-button" />
+            <h1>Under Development</h1>
           </div>
         </div>
       )
@@ -874,4 +840,4 @@ const HomePage = (props) => {
       )
   }
 }
-export default HomePage
+export default LocalPlay

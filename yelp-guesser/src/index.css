@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Viga&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
 *{
   font-family: 'Viga', sans-serif;
 }
@@ -570,26 +571,8 @@ form .signin-form{
   justify-items: center;
 }
 
-.your-scores{
-  width: 300px;
-  margin:auto;
-  background-color: #2EC4B6;
-  color:#FDFFFC;
-  border-radius: 16px;
-  margin-top: 20px;
-}
 
-.your-scores h2{
-  padding-top: 5px;
-}
 
-.your-scores li{
-  margin-bottom: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  font-family: 'Orelega One', cursive;
-  font-size: 20px;
-}
 
 .zip-leader{
   width: 300px;
@@ -785,9 +768,55 @@ font-size: 39px;
 /* //////////////////////// */
 
 
+
+
+/* ///////////////////////////////////////////////////////////////////////////// */
+/* /////////////////////////////// LEADERBOARD CSS ///////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////// */
+
+#scores-page{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-self: center;
+  align-self: center;
+  height: 70vh;
+  width: 85vw;
+  margin-top: 70px;
+}
+.leader-scores{
+  height:75%;
+  width: 50%;
+  border: 4px solid black;
+  margin: 30px;
+}
+.leader-scores:hover{
+cursor: pointer;
+}
+#trophy{
+  height: 70%;
+  -webkit-filter: invert(100%); 
+  filter: invert(100%);
+}
+ #leaderboard-list{
+   line-height: 100%;
+ }
+ li{
+   line-height: 12px;
+   
+   justify-self: center;
+   align-items: center;
+ }
+
+
 .points {
   font-weight: bold;
   font-size: larger;
+  color:#E71D36
+}
+.username{
+  color:#2EC4B6
 }
 
 .date {
@@ -820,18 +849,22 @@ font-size: 39px;
 }
 #star-img{
   width: 165px;
+  cursor: pointer;
 }
 #dollar-img{
-
+cursor: pointer;
   width: 165px;
 
 }
 #getready-img{
+  margin-top: 100px;
   height:300px;
+  justify-self: center;
 }
 
 
 .stars{
+  cursor: pointer;
   height: 28px;
   width: 15px;
   margin:.6px;
@@ -842,32 +875,41 @@ font-size: 39px;
 
 }
 .dollars{
+  cursor: pointer;
   height: 28px;
   width: 15px;
   margin:2.6px;
   padding: .1px;
   display: flex;
   flex-direction: row;
-  transform: translatey(-35px);
+  transform: translatey(-50px);
 }
 
 #business-image{
   max-height: 400px;
   width: auto;
 }
-
+#flare{
+  
+  color:#E71D36;
+  font-size: 100px;
+  bottom: 250px;
+  z-index: -100;
+}
 .flareAnimationStop{
   opacity: 0;
   animation: none;
-  position: absolute;
+  position: relative;
+  
 }
 
 .flareAnimationGo{
-  animation: flare 1s 1;
+  animation: flare 1.5s 1;
   font-weight: bolder;
   z-index: -100;
   font-size:44px;
-  position: absolute;
+  position: relative;
+
 }
 
 #dollar-img{
@@ -879,14 +921,68 @@ font-size: 39px;
 }
 
 .star-button-box{
-  border: 1px solid black;
+  
   margin: 15px;
   padding: 10px;
 }
+.next-arrow{
+  height:50px;
+}
+.next-arrow:hover{
+  cursor: pointer;
+  transform: translateY(10px);
+  -webkit-filter: invert(61%) sepia(80%) saturate(372%) hue-rotate(125deg) brightness(91%) contrast(91%);
+  filter: invert(61%) sepia(80%) saturate(372%) hue-rotate(125deg) brightness(91%) contrast(91%);
+  
+}
+#review-container{
+  display: inline-block;
+  
+}
+#review-full{
+  font-size: 30px;
+  text-shadow: 2px 2px #2EC4B6;
+  opacity: 0;
+  font-family: 'VT323', monospace;
+  text-align: center;
 
+  animation: appear 5s forwards;
+}
+#review-question{
+  opacity: 0;
+  font-size: 20px;
+  animation: appearquestion 6s forwards;
+}
+#next-button-review{
+  opacity: 0;
+
+  animation: appearquestion 9s forwards;
+}
+.start-state-box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#globe-logo{
+  height: 300px;
+  width: 300px;
+}
+@keyframes appear {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+@keyframes appearquestion {
+  50%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
 @keyframes flare {
   99%  {
-    transform: translatey(-20px);
+    transform: translatey(-100px);
   }
   100%{
     opacity: 0;
