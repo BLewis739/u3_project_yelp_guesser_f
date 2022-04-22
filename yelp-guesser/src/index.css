@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Viga&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
 *{
   font-family: 'Viga', sans-serif;
 }
@@ -791,18 +792,22 @@ font-size: 39px;
 }
 #star-img{
   width: 165px;
+  cursor: pointer;
 }
 #dollar-img{
-
+cursor: pointer;
   width: 165px;
 
 }
 #getready-img{
+  margin-top: 100px;
   height:300px;
+  justify-self: center;
 }
 
 
 .stars{
+  cursor: pointer;
   height: 28px;
   width: 15px;
   margin:.6px;
@@ -813,13 +818,14 @@ font-size: 39px;
 
 }
 .dollars{
+  cursor: pointer;
   height: 28px;
   width: 15px;
   margin:2.6px;
   padding: .1px;
   display: flex;
   flex-direction: row;
-  transform: translatey(-35px);
+  transform: translatey(-50px);
 }
 
 #business-image{
@@ -827,10 +833,11 @@ font-size: 39px;
   width: auto;
 }
 #flare{
-  color:#E71D36;
   
- bottom: 120px;
-  z-index: 100;
+  color:#E71D36;
+  font-size: 100px;
+  bottom: 250px;
+  z-index: -100;
 }
 .flareAnimationStop{
   opacity: 0;
@@ -840,7 +847,7 @@ font-size: 39px;
 }
 
 .flareAnimationGo{
-  animation: flare 1s 1;
+  animation: flare 1.5s 1;
   font-weight: bolder;
   z-index: -100;
   font-size:44px;
@@ -871,7 +878,41 @@ font-size: 39px;
   filter: invert(61%) sepia(80%) saturate(372%) hue-rotate(125deg) brightness(91%) contrast(91%);
   
 }
+#review-container{
+  display: inline-block;
+  
+}
+#review-full{
+  font-size: 30px;
+  text-shadow: 2px 2px #2EC4B6;
+  opacity: 0;
+  font-family: 'VT323', monospace;
+  text-align: center;
 
+  animation: appear 5s forwards;
+}
+#review-question{
+  opacity: 0;
+  font-size: 20px;
+  animation: appearquestion 6s forwards;
+}
+#next-button-review{
+  opacity: 0;
+
+  animation: appearquestion 9s forwards;
+}
+@keyframes appear {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+@keyframes appearquestion {
+  50%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
 @keyframes flare {
   99%  {
     transform: translatey(-100px);

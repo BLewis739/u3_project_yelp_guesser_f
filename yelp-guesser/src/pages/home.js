@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import hotGuessLogo from '../images/hot-guesses.png'
 import yelpGuesserLogo from '../images/yelpguesserlogo.png'
 import cryCat from '../images/crycat.png'
+
 const Home = () => {
   let navigate = useNavigate()
 

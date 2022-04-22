@@ -5,6 +5,7 @@ import localPlay from '../images/localplay.png'
 import globalPlay from '../images/globelogo.webp'
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 const Quickplay = () => {
   const [spinClassOne, setSpinClassOne] = useState(false)
   const [spinClassTwo, setSpinClassTwo] = useState(false)
@@ -13,7 +14,9 @@ const Quickplay = () => {
   const [subtextClassOne, setSubtextClassOne] = useState(false)
   const [subtextClassTwo, setSubtextClassTwo] = useState(false)
   const [subtextClassThree, setSubtextClassThree] = useState(false)
+
   let navigate = useNavigate()
+
   return (
     <div id="game-page">
       <div className="game-select">
@@ -31,6 +34,9 @@ const Quickplay = () => {
             onMouseLeave={() => (
               setSubtextClassOne(false), setSpinClassOne(false)
             )}
+            onClick={() => {
+              navigate('/localplay')
+            }}
           >
             Local Play
           </h1>
@@ -81,6 +87,7 @@ const Quickplay = () => {
             onMouseLeave={() => (
               setSubtextClassThree(false), setSpinClassThree(false)
             )}
+            onClick={() => navigate('/globalplay')}
           >
             Global Play
           </h1>

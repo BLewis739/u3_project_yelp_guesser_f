@@ -15,6 +15,7 @@ const Register = () => {
 
   const handleChange = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value })
+    console.log(formValues)
   }
 
   const handleSubmit = async (e) => {
@@ -24,6 +25,7 @@ const Register = () => {
       password: formValues.password,
       zipcode: formValues.zipcode
     })
+    console.log('zipCode: ' + formValues.zipcode)
     setFormValues({
       username: '',
       password: '',

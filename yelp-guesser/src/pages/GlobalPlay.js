@@ -23,7 +23,7 @@ import getReady from '../images/getready.PNG'
 import nextArrow from '../images/arrow.png'
 import FinalScore from '../components/FinalScore'
 
-const HomePage = (props) => {
+const GlobalPlay = (props) => {
   ////                   ////
   //// State & Variables ////
   ////                   ////
@@ -73,14 +73,14 @@ const HomePage = (props) => {
 
   const [countDown, setCountDown] = useState(3)
 
+  const [zipCode, setZipCode] = useState(60634)
+
   ////           ////
   //// Functions ////
   ////           ////
 
   const getBusinesses = async (zipCode) => {
-    let res = await axios.get(
-      `https://yelp-guesser-b.herokuapp.com/businesses${zipCode}`
-    )
+    let res = await axios.get(`https://localhost:3001/businesses${zipCode}`)
     console.log(res.data.businesses)
     setBusinesses(res.data.businesses)
   }
@@ -384,13 +384,33 @@ const HomePage = (props) => {
     setTimeout(() => setCountDown(0), 3000)
     setTimeout(() => setRound(1), 3500)
   }
+  const phraseGenerator = () => {
+    let codes = [
+      'tokyo',
+      'madrid',
+      'rio',
+      'rome',
+      'london',
+      'warsaw',
+
+      'moscow',
+      'belfast',
+      'seoul',
+      'bangladesh',
+      'dubai',
+      '00810',
+      'medellin',
+      'dublin'
+    ]
+    setZipCode(codes[parseInt(Math.random() * (codes.length - 0) + 0)])
+  }
 
   ////            ////
   //// useEffect  ////
   ////            ////
 
   useEffect(() => {
-    // getBusinesses(zipCode)
+    phraseGenerator()
   }, [])
 
   ////        ////
@@ -405,20 +425,19 @@ const HomePage = (props) => {
         <div>
           <div className="start-state-box">
             <img src={quickPlay} />
-            <h3>ENTER A ZIPCODE</h3>
-            <form>
-              <input name="zip" onChange={handleChange} />
-              <button
-                id="next-button"
-                onClick={(event) => {
-                  event.preventDefault()
-                  console.log(zip)
-                  getBusinesses(zip)
-                }}
-              >
-                LOCK IN ZIPCODE
-              </button>
-            </form>
+
+            <button
+              id="next-button"
+              onClick={(event) => {
+                event.preventDefault()
+                console.log(zip)
+                getBusinesses(zipCode)
+                console.log(zipCode)
+              }}
+            >
+              LOCK IN ZIPCODE
+            </button>
+
             <button
               disabled={businesses.length > 1 ? false : true}
               id="next-button"
@@ -874,4 +893,4 @@ const HomePage = (props) => {
       )
   }
 }
-export default HomePage
+export default GlobalPlay
