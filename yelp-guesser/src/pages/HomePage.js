@@ -73,6 +73,16 @@ const HomePage = (props) => {
 
   const [countDown, setCountDown] = useState(3)
 
+  const [businessStore, setBusinessStore] = useState({
+    name: '',
+    image: '',
+    rating: '',
+    price: '',
+    id: '',
+    review: '',
+    reviewScore: ''
+  })
+
   ////           ////
   //// Functions ////
   ////           ////
